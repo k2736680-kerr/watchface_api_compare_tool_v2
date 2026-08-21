@@ -1,0 +1,300 @@
+{
+  "source": "D:/下载/v4_firmware_routing_template.xlsx",
+  "extracted_at": "2026-08-14T03:41:13.229Z",
+  "rows": [
+    {
+      "sheet_row": 24,
+      "platform": "V3",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/v3/list?tpls=60&tag_id=2&tested=yes&fv=MOY-BGO3-2.3.5&per_page=20&p=2&max_size=524288&ver=&lang=en",
+      "body": ""
+    },
+    {
+      "sheet_row": 25,
+      "platform": "V3",
+      "method": "GET",
+      "url": "https://api.moyoung.com/v2/faces?fv=MOY-LOL5-2.1.0&p=1&per_page=18&tpls=60",
+      "body": ""
+    },
+    {
+      "sheet_row": 26,
+      "platform": "V3",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/v3/tag-list?fv=MOY-CYO3-2.3.5&lang=pt&max_size=524288&p=1&per_page=20&tested=yes&tpls=33",
+      "body": ""
+    },
+    {
+      "sheet_row": 27,
+      "platform": "V3",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/v3/list?tpls=53&tag_id=18&tested=yes&fv=MOY-LVS3-2.0.8&per_page=20&p=1&max_size=1048576&ver=&lang=fr",
+      "body": ""
+    },
+    {
+      "sheet_row": 28,
+      "platform": "V3",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/v3/face-detail?id=19047&lang=en&fv=MOY-BGO3-2.3.5&ver=&max_size=524288",
+      "body": ""
+    },
+    {
+      "sheet_row": 29,
+      "platform": "V3",
+      "method": "POST",
+      "url": "https://api.moyoung.com/faces/v3/face-download",
+      "body": "{\n\n\"id\": 420,\n\n\"fv\": \"MOY-FHN-1.2.3\"\n\n}"
+    },
+    {
+      "sheet_row": 30,
+      "platform": "杰理",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/face-detail?api_ver=53&func_ver=3&fv=MOY-96G2-2.0.5&id=22773&lang=en&max_size=999999999&tested=yes&tpls=98",
+      "body": ""
+    },
+    {
+      "sheet_row": 31,
+      "platform": "杰理",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/tag-face-list?fv=MOY-J4P3-2.0.4&p=1&per_page=20&api_ver=53&tpls=98&lang=ja&max_size=1310720&func_ver=3",
+      "body": ""
+    },
+    {
+      "sheet_row": 32,
+      "platform": "杰理",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/face-list?fv=MOY-V4G5-2.0.2&p=2&per_page=20&api_ver=53&tpls=98&tested=yes&tag_id=2&lang=es&max_size=1310720&func_ver=3",
+      "body": ""
+    },
+    {
+      "sheet_row": 33,
+      "platform": "杰理",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/9628",
+      "body": ""
+    },
+    {
+      "sheet_row": 34,
+      "platform": "杰理",
+      "method": "POST",
+      "url": "https://api.moyoung.com/faces/new/face-download",
+      "body": "\"{\n\n\n\"\"id\"\": 22822,\n\n\n\"\"fv\"\": \"\"MOY-VCA3-2.0.1\"\"\n\n\n}\""
+    },
+    {
+      "sheet_row": 35,
+      "platform": "RTL8773",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/face-detail?api_ver=0&func_ver=0&fv=MOY-L2A3-2.0.4&id=7832&lang=ar&max_size=999999999&tested=yes&tpls=125",
+      "body": ""
+    },
+    {
+      "sheet_row": 36,
+      "platform": "RTL8773",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/tag-face-list?fv=MOY-L2A3-2.0.4&p=1&per_page=20&api_ver=53&tpls=125&lang=ja&max_size=1310720&func_ver=3",
+      "body": ""
+    },
+    {
+      "sheet_row": 37,
+      "platform": "RTL8773",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/face-list?fv=MOY-L2A3-2.0.4&p=2&per_page=20&api_ver=53&tpls=125&tested=yes&tag_id=2&lang=es&max_size=1310720&func_ver=3",
+      "body": ""
+    },
+    {
+      "sheet_row": 38,
+      "platform": "RTL8773",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/24608",
+      "body": ""
+    },
+    {
+      "sheet_row": 39,
+      "platform": "RTL8773",
+      "method": "POST",
+      "url": "https://api.moyoung.com/faces/new/face-download",
+      "body": "\"{\n\n\n\"\"id\"\": 24608,\n\n\n\"\"fv\"\": \"\"MOY-L2A3-2.0.4\"\"\n\n\n}\""
+    },
+    {
+      "sheet_row": 40,
+      "platform": "中科蓝汛",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/face-detail?api_ver=0&func_ver=0&fv=MOY-L2A3-2.0.4&id=7832&lang=ar&max_size=999999999&tested=yes&tpls=125",
+      "body": ""
+    },
+    {
+      "sheet_row": 41,
+      "platform": "中科蓝汛",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/tag-face-list?fv=MOY-L2A3-2.0.4&p=1&per_page=20&api_ver=53&tpls=125&lang=ja&max_size=1310720&func_ver=3",
+      "body": ""
+    },
+    {
+      "sheet_row": 42,
+      "platform": "中科蓝汛",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/face-list?fv=MOY-L2A3-2.0.4&p=2&per_page=20&api_ver=53&tpls=125&tested=yes&tag_id=2&lang=es&max_size=1310720&func_ver=3",
+      "body": ""
+    },
+    {
+      "sheet_row": 43,
+      "platform": "中科蓝汛",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/24608",
+      "body": ""
+    },
+    {
+      "sheet_row": 44,
+      "platform": "中科蓝汛",
+      "method": "POST",
+      "url": "https://api.moyoung.com/faces/new/face-download",
+      "body": "\"{\n\n\n\"\"id\"\": 22822,\n\n\n\"\"fv\"\": \"\"MOY-VCA3-2.0.1\"\"\n\n\n}\""
+    },
+    {
+      "sheet_row": 45,
+      "platform": "海思",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/face-list?fv=MOY-H1O3-3.0.0&p=2&per_page=20&api_ver=6&tpls=134&tested=yes&api_ver_all=%7B%220%22%3A22%2C%221%22%3A10%2C%222%22%3A9%2C%223%22%3A17%2C%224%22%3A7%2C%225%22%3A4%2C%226%22%3A2%2C%227%22%3A7%2C%228%22%3A1%2C%229%22%3A3%2C%2210%22%3A3%2C%2211%22%3A2%7D&tag_id=1&lang=es&max_size=569344&func_ver=12",
+      "body": ""
+    },
+    {
+      "sheet_row": 46,
+      "platform": "海思",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/tag-face-list?fv=MOY-H1O3-3.0.0&p=1&per_page=20&api_ver=6&tpls=134&api_ver_all=%7B%220%22%3A22%2C%221%22%3A10%2C%222%22%3A9%2C%223%22%3A17%2C%224%22%3A7%2C%225%22%3A4%2C%226%22%3A2%2C%227%22%3A7%2C%228%22%3A1%2C%229%22%3A3%2C%2210%22%3A3%2C%2211%22%3A2%7D&lang=en&max_size=569344&func_ver=12",
+      "body": ""
+    },
+    {
+      "sheet_row": 47,
+      "platform": "海思",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/face-detail?api_ver=6&api_ver_all=%5B%225%22%3A%204%2C%20%229%22%3A%203%2C%20%224%22%3A%207%2C%20%220%22%3A%2022%2C%20%221%22%3A%2010%2C%20%226%22%3A%202%2C%20%227%22%3A%207%2C%20%228%22%3A%201%2C%20%2210%22%3A%203%2C%20%223%22%3A%2017%2C%20%2211%22%3A%202%2C%20%222%22%3A%2010%5D&func_ver=12&fv=MOY-H1O3-3.0.0&id=8765&lang=ja&max_size=999999999&tested=yes&tpls=134",
+      "body": ""
+    },
+    {
+      "sheet_row": 48,
+      "platform": "海思",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/8619",
+      "body": ""
+    },
+    {
+      "sheet_row": 49,
+      "platform": "海思",
+      "method": "POST",
+      "url": "https://api.moyoung.com/faces/new/face-download",
+      "body": "\"{\n\n\n\"\"id\"\": 8619,\n\n\n\"\"fv\"\": \"\"MOY-H1O3-3.0.0\"\"\n\n\n}\""
+    },
+    {
+      "sheet_row": 50,
+      "platform": "杰理nandflash",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/face-list?fv=MOY-JIA2-2.0.0&p=2&per_page=20&api_ver=53&tpls=131&tested=yes&tag_id=4&lang=en&max_size=1769472&func_ver=3",
+      "body": ""
+    },
+    {
+      "sheet_row": 51,
+      "platform": "杰理nandflash",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/face-detail?api_ver=0&func_ver=0&fv=MOY-JIA2-2.0.0&id=7356&lang=ar&max_size=999999999&tested=yes&tpls=131",
+      "body": ""
+    },
+    {
+      "sheet_row": 52,
+      "platform": "杰理nandflash",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/tag-face-list?fv=MOY-JIA2-2.0.0&p=1&per_page=20&api_ver=53&tpls=131&lang=ja&max_size=1310720&func_ver=3",
+      "body": ""
+    },
+    {
+      "sheet_row": 53,
+      "platform": "杰理nandflash",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/7334",
+      "body": ""
+    },
+    {
+      "sheet_row": 54,
+      "platform": "杰理nandflash",
+      "method": "POST",
+      "url": "https://api.moyoung.com/faces/new/face-download",
+      "body": "\"{\n\n\n\"\"id\"\": 7334,\n\n\n\"\"fv\"\": \"\"MOY-JIA2-2.0.0\"\"\n\n\n}\""
+    },
+    {
+      "sheet_row": 55,
+      "platform": "杰理707",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/face-detail?fv=MOY-W892-2.0.0&api_ver=53&id=18887&lang=en&max_size=720896&func_ver=3",
+      "body": ""
+    },
+    {
+      "sheet_row": 56,
+      "platform": "杰理707",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/tag-face-list?fv=MOY-W892-2.0.0&p=1&per_page=20&api_ver=53&tpls=175&lang=ja&max_size=1310720&func_ver=3",
+      "body": ""
+    },
+    {
+      "sheet_row": 57,
+      "platform": "杰理707",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/face-list?fv=MOY-W892-2.0.0&p=2&per_page=20&api_ver=53&tpls=175&tested=yes&tag_id=2&lang=es&max_size=1310720&func_ver=3",
+      "body": ""
+    },
+    {
+      "sheet_row": 58,
+      "platform": "杰理707",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/17125",
+      "body": ""
+    },
+    {
+      "sheet_row": 59,
+      "platform": "杰理707",
+      "method": "POST",
+      "url": "https://api.moyoung.com/faces/new/face-download",
+      "body": "\"{\n\n\n\"\"id\"\": 17125,\n\n\n\"\"fv\"\": \"\"MOY-W892-2.0.0\"\"\n\n\n}\""
+    },
+    {
+      "sheet_row": 60,
+      "platform": "思澈",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/sifli?tpls=14&key=&tested=yes&tag_id=2&fv=MOY-F9Z3-3.6.8&per_page=20&p=1&max_size=2138112&ver=&lang=es",
+      "body": ""
+    },
+    {
+      "sheet_row": 61,
+      "platform": "思澈",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/sifli/tag-list?lang=en&tpls=14&fv=MOY-F9Z3-3.6.8&per_page=%2010&tested=%20yes&max_size=%2026101276&p=%201",
+      "body": ""
+    },
+    {
+      "sheet_row": 62,
+      "platform": "思澈",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/sifli/992",
+      "body": ""
+    },
+    {
+      "sheet_row": 63,
+      "platform": "思澈",
+      "method": "POST",
+      "url": "https://api.moyoung.com/faces/sifli/face-download",
+      "body": "\"{\n\n\n\"\"id\"\": 992,\n\n\n\"\"fv\"\": \"\"MOY-F9Z3-3.6.8\"\"\n\n\n}\""
+    },
+    {
+      "sheet_row": 64,
+      "platform": "杰理",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/tag-face-list?lang=%20en&tpls=76&fv=MOY-7EE3-2.0.1&p=%201&per_page=100&tested=%20yes&max_size=%2044115486896&api_ver=96&func_ver=96",
+      "body": ""
+    },
+    {
+      "sheet_row": 65,
+      "platform": "杰理",
+      "method": "GET",
+      "url": "https://api.moyoung.com/faces/new/face-list?tpls=76&tested=yes&fv=MOY-VHM3-2.0.1&per_page=100&tag_id=1&func_ver=99&lang=en&api_ver=99&max_size=99999996666&api_ver_all=99",
+      "body": ""
+    }
+  ]
+}

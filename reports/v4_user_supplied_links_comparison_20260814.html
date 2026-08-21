@@ -1,0 +1,2228 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>V4 表盘业务接口问题报告</title><style>
+body{margin:0;background:#f5f7fb;color:#172033;font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif}main{max-width:1440px;margin:auto;padding:28px 24px 60px}h1{margin:0}h2{margin-top:28px}.note{margin:14px 0;padding:13px;border-left:4px solid #175cd3;background:#eef4ff}.cards{display:flex;gap:12px;flex-wrap:wrap}.card{background:#fff;border:1px solid #e4e7ec;border-radius:9px;padding:12px;min-width:145px}.card b{font-size:24px;display:block}.case{background:#fff;border:1px solid #e4e7ec;border-radius:10px;margin:12px 0;overflow:hidden}.case.bad{border-left:5px solid #b42318}.case header{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px;border-bottom:1px solid #e4e7ec}.case.bad header b{color:#b42318;font-size:20px}.case.ok header b{color:#067647;font-size:18px}.case header strong{font-size:18px}.case header span{font-size:16px;flex:1}.case header em{color:#667085;font-style:normal}.urls{padding:12px 14px;background:#fbfcfe;display:grid;gap:7px}label{display:inline-block;width:55px;color:#667085;font-weight:bold}a{color:#175cd3;word-break:break-all}code{font:12px Consolas,monospace;background:#f2f4f7;padding:2px 4px;border-radius:3px}details{padding:0 14px 14px}summary{padding:12px 0;font-weight:bold;cursor:pointer}table{width:100%;border-collapse:collapse;background:#fff}th,td{padding:9px;border-bottom:1px solid #e4e7ec;text-align:left;vertical-align:top;word-break:break-word}th{background:#f9fafb}.diff{border:1px solid #e4e7ec;border-radius:7px;overflow:hidden}.diff small{color:#667085}.raw{display:grid;grid-template-columns:1fr 1fr;gap:12px}pre{max-height:450px;overflow:auto;margin:0;background:#101828;color:#e5e7eb;padding:12px;border-radius:7px;font:12px/1.45 Consolas,monospace;white-space:pre-wrap;word-break:break-word}.empty{padding:10px;color:#667085;background:#f9fafb}.related{background:#fff8f7;margin-top:10px}.related ul{max-height:160px;overflow:auto}.skip{overflow:auto;border:1px solid #e4e7ec;border-radius:8px}@media(max-width:800px){main{padding:18px 10px}.raw{grid-template-columns:1fr}.case header span{min-width:100%}}
+</style></head><body><main><h1>V4 表盘业务接口问题报告</h1><div>生成时间：2026-08-14 16:11:44　|　测试数据：<code>outputs\user_supplied_test_data_20260814.json</code></div><div class="note"><b>范围：</b>已删除整个模板接口大类；保留列表、标签、详情和下载接口。只展示实际差异，返回一致的请求隐藏。V4 返回 <code>-2</code> 一律标记为接口问题。没有明确 V4 对应接口的旧请求不强行比较，单独提示。V4 可新增字段，但不能缺少旧字段或改变旧字段值。同类问题只保留一个真实样本。</div><div class="cards"><div class="card">GET 对照<b>27</b></div><div class="card">POST 对照<b>8</b></div><div class="card">V4 无对应接口<b>7</b></div><div class="card">已隐藏一致<b>14</b></div><div class="card">差异请求<b>21</b></div><div class="card">问题组<b>12</b></div></div><h2>业务接口问题（已归类；每类只保留一个样本）</h2><article class="case bad" data-status="issue" data-platform="RTL8773">
+<header><b>差异</b><strong>RTL8773</strong><span><code>/faces/new/face-detail</code> → <code>/faces/v4/face-detail</code></span><em>影响 1 条请求</em></header>
+<div class="urls"><div><label>旧接口</label><a href="https://api.moyoung.com/faces/new/face-detail?api_ver=0&amp;func_ver=0&amp;fv=MOY-L2A3-2.0.4&amp;id=7832&amp;lang=ar&amp;max_size=999999999&amp;tested=yes&amp;tpls=125" target="_blank">https://api.moyoung.com/faces/new/face-detail?api_ver=0&amp;func_ver=0&amp;fv=MOY-L2A3-2.0.4&amp;id=7832&amp;lang=ar&amp;max_size=999999999&amp;tested=yes&amp;tpls=125</a></div><div><label>V4</label><a href="https://api.moyoung.com/faces/v4/face-detail?api_ver=0&amp;func_ver=0&amp;fv=MOY-L2A3-2.0.4&amp;id=7832&amp;lang=ar&amp;max_size=999999999&amp;tested=yes&amp;tpls=125" target="_blank">https://api.moyoung.com/faces/v4/face-detail?api_ver=0&amp;func_ver=0&amp;fv=MOY-L2A3-2.0.4&amp;id=7832&amp;lang=ar&amp;max_size=999999999&amp;tested=yes&amp;tpls=125</a></div></div>
+<details open><summary>查看已确认的差异</summary><table class='diff'><tr><th>字段路径</th><th>问题</th><th>旧接口实际值</th><th>V4 实际值</th></tr><tr><td><code>$.remark_lang</code></td><td>旧字段在 V4 缺失</td><td>Butterfly wallpaper dial, lively and interesting.</td><td>&lt;V4 未返回&gt;</td></tr><tr><td><code>$.tags</code></td><td>值不同</td><td>{&quot;6&quot;:&quot;Modern&quot;}</td><td>[{&quot;id&quot;:6,&quot;name&quot;:&quot;Modern&quot;}]</td></tr></table><details class="raw"><summary>查看完整原始响应</summary><div class="raw"><div><h4>旧接口响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+    &quot;download&quot;: 0,
+    &quot;face_list&quot;: [
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 13359,
+        &quot;name&quot;: &quot;Fast speed&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/753e92013113fab6753a734aad209a96.png&quot;,
+        &quot;size&quot;: 204559,
+        &quot;uploader&quot;: &quot;曾翠&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 13151,
+        &quot;name&quot;: &quot;FlipTime&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/Lj8v2BjdfpR4WMlfFntDyofnxzs1w4YE.png&quot;,
+        &quot;size&quot;: 235153,
+        &quot;uploader&quot;: &quot;何秋霞&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 11881,
+        &quot;name&quot;: &quot;Minimalist&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/5c35c980b587b50f4bb9c8ba12ffe414.png&quot;,
+        &quot;size&quot;: 270380,
+        &quot;uploader&quot;: &quot;杨梦琪&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 9505,
+        &quot;name&quot;: &quot;Piano Dance&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/8e95599f34c6f72b82902346870ba2d5.png&quot;,
+        &quot;size&quot;: 159131,
+        &quot;uploader&quot;: &quot;胡锦平&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 9504,
+        &quot;name&quot;: &quot;Spatiotemporal rift&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/20ce8c812350e1b6cd880fb17b4aee15.png&quot;,
+        &quot;size&quot;: 640360,
+        &quot;uploader&quot;: &quot;胡锦平&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 7836,
+        &quot;name&quot;: &quot;Space Travel&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/87df60237c90eca39907c75a2f3716f1.png&quot;,
+        &quot;size&quot;: 125079,
+        &quot;uploader&quot;: &quot;杨梦琪&quot;
+      }
+    ],
+    &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/8c66d67f6d2e42d47b7c36fd64f27115.bin?face-id=7832&amp;type=new&quot;,
+    &quot;id&quot;: 7832,
+    &quot;name&quot;: &quot;Butterfly&quot;,
+    &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/149f13557d5d25882424198bebb53c23.png&quot;,
+    &quot;remark_lang&quot;: &quot;Butterfly wallpaper dial, lively and interesting.&quot;,
+    &quot;size&quot;: 421171,
+    &quot;tags&quot;: {
+      &quot;6&quot;: &quot;Modern&quot;
+    },
+    &quot;uploader&quot;: &quot;杨梦琪&quot;
+  },
+  &quot;message&quot;: &quot;ok&quot;
+}</pre></div><div><h4>V4 响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+    &quot;id&quot;: 7832,
+    &quot;name&quot;: &quot;Butterfly&quot;,
+    &quot;tags&quot;: [
+      {
+        &quot;id&quot;: 6,
+        &quot;name&quot;: &quot;Modern&quot;
+      }
+    ],
+    &quot;download&quot;: 0,
+    &quot;size&quot;: 421171,
+    &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/8c66d67f6d2e42d47b7c36fd64f27115.bin?face-id=7832&amp;type=new&quot;,
+    &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/149f13557d5d25882424198bebb53c23.png&quot;,
+    &quot;uploader&quot;: &quot;杨梦琪&quot;,
+    &quot;remark_cn&quot;: &quot;&quot;,
+    &quot;remark_en&quot;: &quot;&quot;,
+    &quot;description&quot;: &quot;Butterfly wallpaper dial, lively and interesting.&quot;,
+    &quot;is_premium&quot;: false,
+    &quot;face_list&quot;: [
+      {
+        &quot;id&quot;: 13359,
+        &quot;name&quot;: &quot;Fast speed&quot;,
+        &quot;size&quot;: 204559,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;曾翠&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/753e92013113fab6753a734aad209a96.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 6,
+            &quot;name&quot;: &quot;Modern&quot;
+          },
+          {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Classic&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 13151,
+        &quot;name&quot;: &quot;FlipTime&quot;,
+        &quot;size&quot;: 235153,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;何秋霞&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/Lj8v2BjdfpR4WMlfFntDyofnxzs1w4YE.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 6,
+            &quot;name&quot;: &quot;Modern&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 11881,
+        &quot;name&quot;: &quot;Minimalist&quot;,
+        &quot;size&quot;: 270380,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;杨梦琪&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/5c35c980b587b50f4bb9c8ba12ffe414.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 6,
+            &quot;name&quot;: &quot;Modern&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 9505,
+        &quot;name&quot;: &quot;Piano Dance&quot;,
+        &quot;size&quot;: 159131,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;胡锦平&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/8e95599f34c6f72b82902346870ba2d5.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 6,
+            &quot;name&quot;: &quot;Modern&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 9504,
+        &quot;name&quot;: &quot;Spatiotemporal rift&quot;,
+        &quot;size&quot;: 640360,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;胡锦平&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/20ce8c812350e1b6cd880fb17b4aee15.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          },
+          {
+            &quot;id&quot;: 6,
+            &quot;name&quot;: &quot;Modern&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 7836,
+        &quot;name&quot;: &quot;Space Travel&quot;,
+        &quot;size&quot;: 125079,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;杨梦琪&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/87df60237c90eca39907c75a2f3716f1.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 6,
+            &quot;name&quot;: &quot;Modern&quot;
+          }
+        ]
+      }
+    ]
+  },
+  &quot;message&quot;: &quot;ok&quot;,
+  &quot;meta&quot;: {
+    &quot;firmware&quot;: &quot;L2A&quot;,
+    &quot;mcu&quot;: 370,
+    &quot;platform&quot;: &quot;rtl8773&quot;,
+    &quot;model&quot;: &quot;RTL8773EWE_VP_CG&quot;,
+    &quot;source&quot;: &quot;new&quot;
+  }
+}</pre></div></div></details></details></article><article class="case bad" data-status="issue" data-platform="RTL8773">
+<header><b>V4 返回 -2（接口问题）</b><strong>RTL8773</strong><span><code>/faces/new/face-download</code> → <code>/faces/v4/face-download</code></span><em>影响 7 条请求</em></header>
+<div class="urls"><div><label>旧接口</label><a href="https://api.moyoung.com/faces/new/face-download" target="_blank">https://api.moyoung.com/faces/new/face-download</a></div><div><label>V4</label><a href="https://api.moyoung.com/faces/v4/face-download" target="_blank">https://api.moyoung.com/faces/v4/face-download</a></div></div>
+<details open><summary>查看已确认的差异</summary><table class='diff'><tr><th>字段路径</th><th>问题</th><th>旧接口实际值</th><th>V4 实际值</th></tr><tr><td><code>$.code</code></td><td>V4 返回 -2（接口问题）</td><td>0</td><td>-2</td></tr><tr><td><code>$.message</code></td><td>V4 的 -2 错误信息</td><td></td><td>Firmware Version parameter error</td></tr></table><details class="raw"><summary>查看完整原始响应</summary><div class="raw"><div><h4>旧接口响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: [],
+  &quot;msg&quot;: &quot;Update successful&quot;
+}</pre></div><div><h4>V4 响应</h4><pre>{
+  &quot;code&quot;: -2,
+  &quot;message&quot;: &quot;Firmware Version parameter error&quot;
+}</pre></div></div></details><details class="related"><summary>同类请求 6 条</summary><ul><li>https://api.moyoung.com/faces/new/face-download</li><li>https://api.moyoung.com/faces/sifli/face-download</li><li>https://api.moyoung.com/faces/new/face-download</li><li>https://api.moyoung.com/faces/new/face-download</li><li>https://api.moyoung.com/faces/new/face-download</li><li>https://api.moyoung.com/faces/new/face-download</li></ul></details></details></article><article class="case bad" data-status="issue" data-platform="V3">
+<header><b>差异</b><strong>V3</strong><span><code>/faces/v3/list</code> → <code>/faces/v4/list</code></span><em>影响 1 条请求</em></header>
+<div class="urls"><div><label>旧接口</label><a href="https://api.moyoung.com/faces/v3/list?tpls=60&amp;tag_id=2&amp;tested=yes&amp;fv=MOY-BGO3-2.3.5&amp;per_page=20&amp;p=2&amp;max_size=524288&amp;ver=&amp;lang=en" target="_blank">https://api.moyoung.com/faces/v3/list?tpls=60&amp;tag_id=2&amp;tested=yes&amp;fv=MOY-BGO3-2.3.5&amp;per_page=20&amp;p=2&amp;max_size=524288&amp;ver=&amp;lang=en</a></div><div><label>V4</label><a href="https://api.moyoung.com/faces/v4/list?tpls=60&amp;tag_id=2&amp;tested=yes&amp;fv=MOY-BGO3-2.3.5&amp;per_page=20&amp;p=2&amp;max_size=524288&amp;ver=&amp;lang=en" target="_blank">https://api.moyoung.com/faces/v4/list?tpls=60&amp;tag_id=2&amp;tested=yes&amp;fv=MOY-BGO3-2.3.5&amp;per_page=20&amp;p=2&amp;max_size=524288&amp;ver=&amp;lang=en</a></div></div>
+<details open><summary>查看已确认的差异</summary><table class='diff'><tr><th>字段路径</th><th>问题</th><th>旧接口实际值</th><th>V4 实际值</th></tr><tr><td><code>$</code></td><td>JSON 结构不同（列表位置变化）</td><td>$.data.faces</td><td>$.data</td></tr><tr><td><code>$[*].tpl</code></td><td>旧字段在 V4 缺失</td><td>None</td><td>&lt;V4 未返回&gt;</td></tr><tr><td><code>$[*].remark_en</code></td><td>旧字段在 V4 缺失</td><td></td><td>&lt;V4 未返回&gt;</td></tr><tr><td><code>$[*].remark_zh</code></td><td>旧字段在 V4 缺失</td><td></td><td>&lt;V4 未返回&gt;</td></tr><tr><td><code>$[*].remark_en</code> <small>×16</small></td><td>值不同</td><td></td><td>Have you ever seen a clock tower?</td></tr></table><details class="raw"><summary>查看完整原始响应</summary><div class="raw"><div><h4>旧接口响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+    &quot;count&quot;: 20,
+    &quot;faces&quot;: [
+      {
+        &quot;id&quot;: 19052,
+        &quot;name&quot;: &quot;Active&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 0,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/825587fd8eff539697d8ca124e0cb698.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/e6ad1de5714aad104c98924f98d7bcb3.bin&quot;
+      },
+      {
+        &quot;id&quot;: 16882,
+        &quot;name&quot;: &quot;Deep Night&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 0,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/61b29ba936dd983dd723ad520bbc951b.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/4d79fcf43b28584c1a0d729f9cb13c29.bin&quot;
+      },
+      {
+        &quot;id&quot;: 16450,
+        &quot;name&quot;: &quot;Mechanical Heart&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 0,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/656474df2ee39f597ba028519abd0d47.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/656474df2ee31837372205e265f04d0b.bin&quot;
+      },
+      {
+        &quot;id&quot;: 15652,
+        &quot;name&quot;: &quot;Verdant Goldshield&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 0,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/653117f2f2456b426b0f475039cbb05f.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/30d6e43d89d4d5f5734d1bd3c7e687f9.bin&quot;
+      },
+      {
+        &quot;id&quot;: 15317,
+        &quot;name&quot;: &quot;Mechanical Marvel&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 0,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/5ff1de0ee6b5fddee6501104c4ef266a.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/4e9e8756f5cda6c0244d7aa45ad360bc.bin&quot;
+      },
+      {
+        &quot;id&quot;: 15247,
+        &quot;name&quot;: &quot;Black&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 0,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/65112d3fb4a610d55d213b238dfd573a.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/65112d3fb4a5874b77f1b52a6f00a5ce.bin&quot;
+      },
+      {
+        &quot;id&quot;: 15025,
+        &quot;name&quot;: &quot;Mechanical Heart&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 0,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/kTCS1tDDdzmwxD2AYWzrqhicKmsQvLHV.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/1tpf2IP4wmaCHdNrjCOY7RwQYMwsYN4k.bin&quot;
+      },
+      {
+        &quot;id&quot;: 14919,
+        &quot;name&quot;: &quot;Black Metal&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 0,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/64f5ad9bf34820623bdcd940e12e8d72.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/64f5ad9bf347b1d89aca4c0f96af4476.bin&quot;
+      },
+      {
+        &quot;id&quot;: 14890,
+        &quot;name&quot;: &quot;Mechanic&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 4954,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/64ef4917254ec11bc8bf467ea6f1bf4b.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/64ef4917254e066025262cef367abd2b.bin&quot;
+      },
+      {
+        &quot;id&quot;: 14736,
+        &quot;name&quot;: &quot;black Gold&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 9096,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/64ddf29fecd618c14387f2e84f56dfc3.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/64ddf29fecd5b5daa85ef86ff82d030a.bin&quot;
+      },
+      {
+        &quot;id&quot;: 14699,
+        &quot;name&quot;: &quot;Gloss&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 0,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/64dc6b58b105c098938467d0e094c41f.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/64dc6b58b1056ce1308425f2142ca102.bin&quot;
+      },
+      {
+        &quot;id&quot;: 14465,
+        &quot;name&quot;: &quot;mechanical dance&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 0,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/27953deed636bb2775e6c3d08d882b7e.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/7a7503e7e8c1f50440ad0dc84eccd5b1.bin&quot;
+      },
+      {
+        &quot;id&quot;: 14294,
+        &quot;name&quot;: &quot;Starry Night&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 10931,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/64ba56e63d030527f55ae5341b1d0f43.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/64ba56e63d026642fde19c4e3a94d414.bin&quot;
+      },
+      {
+        &quot;id&quot;: 13336,
+        &quot;name&quot;: &quot;Photonic Crystals&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 5840,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/646444a64b8918d4ef980d1aa61873e2.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/646444a64b8893492b9dc3fea2259d65.bin&quot;
+      },
+      {
+        &quot;id&quot;: 13258,
+        &quot;name&quot;: &quot;Luxury&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 2825,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/645de274b2f40cc6e1ede75f64a66c08.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/645de274b2f360ba21734eae42c4016e.bin&quot;
+      },
+      {
+        &quot;id&quot;: 12731,
+        &quot;name&quot;: &quot;Power storage&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 0,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/64422e561198e93ffa331152660c977d.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/64422e56119874c159368b5218061c5a.bin&quot;
+      },
+      {
+        &quot;id&quot;: 9169,
+        &quot;name&quot;: &quot;Light faith&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 6550,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/63326ce59452461dc65ff393a4937fb6.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/63326ce594519c8ad4a11e5a4f86e7cf.bin&quot;
+      },
+      {
+        &quot;id&quot;: 8048,
+        &quot;name&quot;: &quot;Deep Night&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 0,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/62ff4bac213eaaa843f46413b3a5a8c4.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/62ff4bac213e37af9fdd2e5969dc9acf.bin&quot;
+      },
+      {
+        &quot;id&quot;: 7978,
+        &quot;name&quot;: &quot;Light faith&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 34541,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/62fe0a4f5c5d2eb88e28a47ec1566b8e.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/12edb01eb790c9bae0efc436ac677824.bin&quot;
+      },
+      {
+        &quot;id&quot;: 6139,
+        &quot;name&quot;: &quot;Line&quot;,
+        &quot;tpl&quot;: null,
+        &quot;download&quot;: 15231,
+        &quot;remark_en&quot;: &quot;&quot;,
+        &quot;remark_zh&quot;: &quot;&quot;,
+        &quot;tpls&quot;: [
+          60
+        ],
+        &quot;firmware&quot;: [],
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/62c3a7e813402f08ed0869946b82537e.png&quot;,
+        &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/62c3a7e8133f8835102ae5cce5d91ffb.bin&quot;
+      }
+    ]
+  },
+  &quot;message&quot;: &quot;ok&quot;,
+  &quot;total&quot;: 45
+}</pre></div><div><h4>V4 响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: 19052,
+      &quot;name&quot;: &quot;Active&quot;,
+      &quot;size&quot;: 95358,
+      &quot;uploader&quot;: &quot;杨芳&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/825587fd8eff539697d8ca124e0cb698.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/e6ad1de5714aad104c98924f98d7bcb3.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 16882,
+      &quot;name&quot;: &quot;Deep Night&quot;,
+      &quot;size&quot;: 201182,
+      &quot;uploader&quot;: &quot;王健&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/61b29ba936dd983dd723ad520bbc951b.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/4d79fcf43b28584c1a0d729f9cb13c29.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;remark_cn&quot;: &quot;你见过钟塔吗？&quot;,
+      &quot;remark_en&quot;: &quot;Have you ever seen a clock tower?&quot;,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 16450,
+      &quot;name&quot;: &quot;Mechanical Heart&quot;,
+      &quot;size&quot;: 255054,
+      &quot;uploader&quot;: &quot;严军义&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/656474df2ee39f597ba028519abd0d47.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/656474df2ee31837372205e265f04d0b.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;remark_cn&quot;: &quot;科技感机械表盘&quot;,
+      &quot;remark_en&quot;: &quot;Technological mechanical dial.&quot;,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 15652,
+      &quot;name&quot;: &quot;Verdant Goldshield&quot;,
+      &quot;size&quot;: 313134,
+      &quot;uploader&quot;: &quot;曹锦彬&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/653117f2f2456b426b0f475039cbb05f.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/30d6e43d89d4d5f5734d1bd3c7e687f9.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;remark_cn&quot;: &quot;翠绿金盾象征着大自然中满溢的绿色和金属的强大力量。&quot;,
+      &quot;remark_en&quot;: &quot;Verdant Goldshield symbolizes the powerful combination of lush greenery and the strength of metal in nature.&quot;,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 15317,
+      &quot;name&quot;: &quot;Mechanical Marvel&quot;,
+      &quot;size&quot;: 152861,
+      &quot;uploader&quot;: &quot;林碧莹&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/5ff1de0ee6b5fddee6501104c4ef266a.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/4e9e8756f5cda6c0244d7aa45ad360bc.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;remark_cn&quot;: &quot;时光交织，机械的魔力，黑金的奢华。&quot;,
+      &quot;remark_en&quot;: &quot;Interwoven Time, Mechanical Magic, Black Gold Luxury.&quot;,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 15247,
+      &quot;name&quot;: &quot;Black&quot;,
+      &quot;size&quot;: 189660,
+      &quot;uploader&quot;: &quot;冉兴&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/65112d3fb4a610d55d213b238dfd573a.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/65112d3fb4a5874b77f1b52a6f00a5ce.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;remark_cn&quot;: &quot;这款数字黑色手表以其简单的设计风格，能够准确地显示时间，心率等多种功能。&quot;,
+      &quot;remark_en&quot;: &quot;With its simple design style, this digital black watch is able to accurately display the time, heart rate and other functions.&quot;,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 15025,
+      &quot;name&quot;: &quot;Mechanical Heart&quot;,
+      &quot;size&quot;: 214880,
+      &quot;uploader&quot;: &quot;许秋梦&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/kTCS1tDDdzmwxD2AYWzrqhicKmsQvLHV.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/1tpf2IP4wmaCHdNrjCOY7RwQYMwsYN4k.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;remark_cn&quot;: &quot;机械风格表盘犹如时间之门，透过它，你可以窥见时间的流逝，感受到机械的心跳和生命的律动，这是一场关于工艺和美学的永恒之旅。&quot;,
+      &quot;remark_en&quot;: &quot;The mechanical style dial is like a time gate, through which you can watch the passage of time, feel the mechanical heartbeat and the rhythm of life, which is an eternal journey about craft and aesthetics.&quot;,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 14919,
+      &quot;name&quot;: &quot;Black Metal&quot;,
+      &quot;size&quot;: 345109,
+      &quot;uploader&quot;: &quot;严军义&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/64f5ad9bf34820623bdcd940e12e8d72.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/64f5ad9bf347b1d89aca4c0f96af4476.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;remark_cn&quot;: &quot;冷酷帅气的机械风格表盘&quot;,
+      &quot;remark_en&quot;: &quot;A cold and handsome mechanical style dial.&quot;,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 14890,
+      &quot;name&quot;: &quot;Mechanic&quot;,
+      &quot;size&quot;: 188258,
+      &quot;uploader&quot;: &quot;曹锦彬&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 4954,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/64ef4917254ec11bc8bf467ea6f1bf4b.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/64ef4917254e066025262cef367abd2b.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;remark_cn&quot;: &quot;机械的齿轮舞动，铸就奇迹的力量。&quot;,
+      &quot;remark_en&quot;: &quot;Gears of mechanics dance, forging the power of miracles.&quot;,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 14736,
+      &quot;name&quot;: &quot;black Gold&quot;,
+      &quot;size&quot;: 187684,
+      &quot;uploader&quot;: &quot;冉兴&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 9096,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/64ddf29fecd618c14387f2e84f56dfc3.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/64ddf29fecd5b5daa85ef86ff82d030a.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;remark_cn&quot;: &quot;观察指针的移动，仿佛听到了机械的心跳声。每一次的微妙滑动都源自复杂的齿轮系统，让人不禁沉醉其中。&quot;,
+      &quot;remark_en&quot;: &quot;Observing the movement of the needle, it is as if a mechanical heartbeat is heard. Each subtle slide comes from a complex gear system that makes you feel enchanted.&quot;,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 14699,
+      &quot;name&quot;: &quot;Gloss&quot;,
+      &quot;size&quot;: 271495,
+      &quot;uploader&quot;: &quot;孔繁&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/64dc6b58b105c098938467d0e094c41f.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/64dc6b58b1056ce1308425f2142ca102.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;remark_cn&quot;: &quot;在不同的角度下，金属表盘呈现出多变的光线折射，散发出深邃而神秘的魅力，仿佛是时间的密码镌刻其中，等待着智者的解读&quot;,
+      &quot;remark_en&quot;: &quot;Under different angles, the metal dial shows changing light refraction, exuding a deep and mysterious charm, as if the code of time is engraved in it, waiting for the interpretation of the wise man&quot;,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 14465,
+      &quot;name&quot;: &quot;mechanical dance&quot;,
+      &quot;size&quot;: 120376,
+      &quot;uploader&quot;: &quot;许秋梦&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/27953deed636bb2775e6c3d08d882b7e.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/7a7503e7e8c1f50440ad0dc84eccd5b1.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;remark_cn&quot;: &quot;在灰色背景下，机械表盘如同一幅精致的艺术品，仿佛时间的指针在其上跳跃舞蹈，展现出一种独特的优雅和神秘。&quot;,
+      &quot;remark_en&quot;: &quot;Against the gray background, the mechanical dial is like a delicate work of art, as if the pointer of time dances on it, showing a unique elegance and mystery.&quot;,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 14294,
+      &quot;name&quot;: &quot;Starry Night&quot;,
+      &quot;size&quot;: 92471,
+      &quot;uploader&quot;: &quot;武傲&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 10931,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/64ba56e63d030527f55ae5341b1d0f43.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/64ba56e63d026642fde19c4e3a94d414.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;remark_cn&quot;: &quot;这款表盘采用了微金属感设计，让整个表盘看起来更加精致，光泽感更强，有着独特的科技感和未来感。&quot;,
+      &quot;remark_en&quot;: &quot;This watch dial features a subtle metallic finish that enhances its overall sophistication, giving it a unique futuristic and tech-inspired aesthetic.&quot;,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 13336,
+      &quot;name&quot;: &quot;Photonic Crystals&quot;,
+      &quot;size&quot;: 100338,
+      &quot;uploader&quot;: &quot;许晓琨&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 5840,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/646444a64b8918d4ef980d1aa61873e2.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/646444a64b8893492b9dc3fea2259d65.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;remark_cn&quot;: &quot;紫色的表盘是一种独特而高雅的设计，它通过将深紫色和浅紫色的色调巧妙地结合在一起，打造出了一种充满神秘感和优雅气息的表盘风格。紫色被认为是一种与创意、幻想和灵性相关的颜色，因此紫色的表盘常常被人们选用来体现个性化和高品味的时尚风格。无论是搭配金属表带还是皮革表带，紫色表盘都能够为手腕增添一份神秘和优雅的气质。&quot;,
+      &quot;remark_en&quot;: &quot;The purple dial is a unique and elegant design, which creates a mysterious and elegant dial style by subtly combining dark and light purple tones. Purple is considered to be a color associated with creativity, fantasy and spirituality, so purple dials are often chosen by people to reflect individuality and high-quality fashion style. Whether it is paired with a metal strap or a leather strap, the purple dial can add a mysterious and elegant temperament to the wrist.&quot;,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 13258,
+      &quot;name&quot;: &quot;Luxury&quot;,
+      &quot;size&quot;: 39536,
+      &quot;uploader&quot;: &quot;许秋梦&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 2825,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/645de274b2f40cc6e1ede75f64a66c08.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/645de274b2f360ba21734eae42c4016e.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;remark_cn&quot;: &quot;黄色温暖，蓝色深邃和沉静，两种颜色的碰撞与融合，让这款表盘展现出一种独特而又和谐的美感。&quot;,
+      &quot;remark_en&quot;: &quot;Yellow warm, blue deep and quiet, the two colors of the collision and fusion, give this dial to show a unique and harmonious aesthetic.&quot;,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 12731,
+      &quot;name&quot;: &quot;Power storage&quot;,
+      &quot;size&quot;: 163388,
+      &quot;uploader&quot;: &quot;孔繁&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/64422e561198e93ffa331152660c977d.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/64422e56119874c159368b5218061c5a.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;remark_cn&quot;: &quot;表盘是时间的舞台，蓄能是它的灵魂，每一次蓄能都是为了向未来铺就光明之路&quot;,
+      &quot;remark_en&quot;: &quot;Appearance is the stage of time，Storm is the reverberant soul，Every first store is the future, the road to the dawn&quot;,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 9169,
+      &quot;name&quot;: &quot;Light faith&quot;,
+      &quot;size&quot;: 60549,
+      &quot;uploader&quot;: &quot;王健&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 6550,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/63326ce59452461dc65ff393a4937fb6.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/63326ce594519c8ad4a11e5a4f86e7cf.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;remark_cn&quot;: &quot;看看这闪光的指针像不像精美的钻石？&quot;,
+      &quot;remark_en&quot;: &quot;Look at this shining pointer, does it look like a beautiful diamond?&quot;,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 8048,
+      &quot;name&quot;: &quot;Deep Night&quot;,
+      &quot;size&quot;: 179554,
+      &quot;uploader&quot;: &quot;胡锦平&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/62ff4bac213eaaa843f46413b3a5a8c4.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/62ff4bac213e37af9fdd2e5969dc9acf.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;remark_cn&quot;: &quot;你见过钟塔吗？&quot;,
+      &quot;remark_en&quot;: &quot;Have you ever seen a clock tower?&quot;,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 7978,
+      &quot;name&quot;: &quot;Light faith&quot;,
+      &quot;size&quot;: 184342,
+      &quot;uploader&quot;: &quot;胡锦平&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 34541,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/62fe0a4f5c5d2eb88e28a47ec1566b8e.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/12edb01eb790c9bae0efc436ac677824.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 6139,
+      &quot;name&quot;: &quot;Line&quot;,
+      &quot;size&quot;: 239120,
+      &quot;uploader&quot;: &quot;胡锦平&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 15231,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/62c3a7e813402f08ed0869946b82537e.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/62c3a7e8133f8835102ae5cce5d91ffb.bin&quot;,
+      &quot;tpls&quot;: [
+        60
+      ],
+      &quot;firmware&quot;: []
+    }
+  ],
+  &quot;message&quot;: &quot;ok&quot;,
+  &quot;meta&quot;: {
+    &quot;firmware&quot;: &quot;BGO&quot;,
+    &quot;mcu&quot;: 11,
+    &quot;platform&quot;: &quot;汇顶&quot;,
+    &quot;model&quot;: &quot;GR5515I0ND&quot;,
+    &quot;source&quot;: &quot;v3&quot;
+  },
+  &quot;total&quot;: 45
+}</pre></div></div></details></details></article><article class="case bad" data-status="issue" data-platform="V3">
+<header><b>差异</b><strong>V3</strong><span><code>/faces/v3/face-detail</code> → <code>/faces/v4/face-detail</code></span><em>影响 1 条请求</em></header>
+<div class="urls"><div><label>旧接口</label><a href="https://api.moyoung.com/faces/v3/face-detail?id=19047&amp;lang=en&amp;fv=MOY-BGO3-2.3.5&amp;ver=&amp;max_size=524288" target="_blank">https://api.moyoung.com/faces/v3/face-detail?id=19047&amp;lang=en&amp;fv=MOY-BGO3-2.3.5&amp;ver=&amp;max_size=524288</a></div><div><label>V4</label><a href="https://api.moyoung.com/faces/v4/face-detail?id=19047&amp;lang=en&amp;fv=MOY-BGO3-2.3.5&amp;ver=&amp;max_size=524288" target="_blank">https://api.moyoung.com/faces/v4/face-detail?id=19047&amp;lang=en&amp;fv=MOY-BGO3-2.3.5&amp;ver=&amp;max_size=524288</a></div></div>
+<details open><summary>查看已确认的差异</summary><table class='diff'><tr><th>字段路径</th><th>问题</th><th>旧接口实际值</th><th>V4 实际值</th></tr><tr><td><code>$.remark_cn</code></td><td>值不同</td><td>None</td><td></td></tr><tr><td><code>$.remark_en</code></td><td>值不同</td><td>None</td><td></td></tr><tr><td><code>$.tags</code></td><td>值不同</td><td>{&quot;1&quot;:&quot;New Watch Faces&quot;,&quot;7&quot;:&quot;Classic&quot;}</td><td>[{&quot;id&quot;:1,&quot;name&quot;:&quot;New Watch Faces&quot;},{&quot;id&quot;:7,&quot;name&quot;:&quot;Classic&quot;}]</td></tr></table><details class="raw"><summary>查看完整原始响应</summary><div class="raw"><div><h4>旧接口响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+    &quot;download&quot;: 0,
+    &quot;face_list&quot;: [
+      {
+        &quot;id&quot;: 20814,
+        &quot;name&quot;: &quot;Orbit Moonphase&quot;,
+        &quot;size&quot;: 107836,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;郭芊芊&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/c327ee5a13607981c03a99ec4b8b3e9a.png&quot;
+      },
+      {
+        &quot;id&quot;: 20676,
+        &quot;name&quot;: &quot;Classic Sport Chrono&quot;,
+        &quot;size&quot;: 60983,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;李伟杰&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/03bdd295e24a085f13c8553b7a7e7871.png&quot;
+      },
+      {
+        &quot;id&quot;: 20645,
+        &quot;name&quot;: &quot;Ink Moment&quot;,
+        &quot;size&quot;: 66543,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;郭芊芊&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/78391c159f620fd067cb4187fdb7385b.png&quot;
+      },
+      {
+        &quot;id&quot;: 20607,
+        &quot;name&quot;: &quot;Daily Vibe&quot;,
+        &quot;size&quot;: 106596,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;杨芳&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/794bf49923aad39e5bdab4a2cc0c5691.png&quot;
+      },
+      {
+        &quot;id&quot;: 20589,
+        &quot;name&quot;: &quot;Interstellar Voyage&quot;,
+        &quot;size&quot;: 231094,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;陈晓静&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/4f9e2244fdf52494770f0860e3482676.png&quot;
+      },
+      {
+        &quot;id&quot;: 20571,
+        &quot;name&quot;: &quot;Blue Tick&quot;,
+        &quot;size&quot;: 52123,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;杨芳&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/9c792cde13bc9aca21fad80b70670fa3.png&quot;
+      }
+    ],
+    &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/ccfcf502ab39f5c8434abe75c9a803e8.bin?face-id=19047&amp;type=v3&quot;,
+    &quot;id&quot;: 19047,
+    &quot;name&quot;: &quot;Crimson Flame Watch&quot;,
+    &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/0dded866c5fff4bc225221e97135dd0d.png&quot;,
+    &quot;remark_cn&quot;: null,
+    &quot;remark_en&quot;: null,
+    &quot;size&quot;: 56472,
+    &quot;tags&quot;: {
+      &quot;1&quot;: &quot;New Watch Faces&quot;,
+      &quot;7&quot;: &quot;Classic&quot;
+    },
+    &quot;uploader&quot;: &quot;李伟杰&quot;
+  },
+  &quot;message&quot;: &quot;ok&quot;
+}</pre></div><div><h4>V4 响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+    &quot;id&quot;: 19047,
+    &quot;name&quot;: &quot;Crimson Flame Watch&quot;,
+    &quot;tags&quot;: [
+      {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;New Watch Faces&quot;
+      },
+      {
+        &quot;id&quot;: 7,
+        &quot;name&quot;: &quot;Classic&quot;
+      }
+    ],
+    &quot;download&quot;: 0,
+    &quot;size&quot;: 56472,
+    &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/ccfcf502ab39f5c8434abe75c9a803e8.bin?face-id=19047&amp;type=v3&quot;,
+    &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/0dded866c5fff4bc225221e97135dd0d.png&quot;,
+    &quot;uploader&quot;: &quot;李伟杰&quot;,
+    &quot;remark_cn&quot;: &quot;&quot;,
+    &quot;remark_en&quot;: &quot;&quot;,
+    &quot;description&quot;: &quot;&quot;,
+    &quot;is_premium&quot;: false,
+    &quot;face_list&quot;: [
+      {
+        &quot;id&quot;: 20814,
+        &quot;name&quot;: &quot;Orbit Moonphase&quot;,
+        &quot;size&quot;: 107836,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;郭芊芊&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/c327ee5a13607981c03a99ec4b8b3e9a.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          },
+          {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Classic&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 20676,
+        &quot;name&quot;: &quot;Classic Sport Chrono&quot;,
+        &quot;size&quot;: 60983,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;李伟杰&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/03bdd295e24a085f13c8553b7a7e7871.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          },
+          {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Classic&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 20645,
+        &quot;name&quot;: &quot;Ink Moment&quot;,
+        &quot;size&quot;: 66543,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;郭芊芊&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/78391c159f620fd067cb4187fdb7385b.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;Recommended&quot;
+          },
+          {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Classic&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 20607,
+        &quot;name&quot;: &quot;Daily Vibe&quot;,
+        &quot;size&quot;: 106596,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;杨芳&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/794bf49923aad39e5bdab4a2cc0c5691.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          },
+          {
+            &quot;id&quot;: 8,
+            &quot;name&quot;: &quot;Activity&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 20589,
+        &quot;name&quot;: &quot;Interstellar Voyage&quot;,
+        &quot;size&quot;: 231094,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;陈晓静&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/4f9e2244fdf52494770f0860e3482676.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          },
+          {
+            &quot;id&quot;: 8,
+            &quot;name&quot;: &quot;Activity&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 20571,
+        &quot;name&quot;: &quot;Blue Tick&quot;,
+        &quot;size&quot;: 52123,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;杨芳&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/9c792cde13bc9aca21fad80b70670fa3.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;Recommended&quot;
+          },
+          {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Classic&quot;
+          }
+        ]
+      }
+    ]
+  },
+  &quot;message&quot;: &quot;ok&quot;,
+  &quot;meta&quot;: {
+    &quot;firmware&quot;: &quot;BGO&quot;,
+    &quot;mcu&quot;: 11,
+    &quot;platform&quot;: &quot;汇顶&quot;,
+    &quot;model&quot;: &quot;GR5515I0ND&quot;,
+    &quot;source&quot;: &quot;v3&quot;
+  }
+}</pre></div></div></details></details></article><article class="case bad" data-status="issue" data-platform="V3">
+<header><b>差异</b><strong>V3</strong><span><code>/faces/v3/face-download</code> → <code>/faces/v4/face-download</code></span><em>影响 1 条请求</em></header>
+<div class="urls"><div><label>旧接口</label><a href="https://api.moyoung.com/faces/v3/face-download" target="_blank">https://api.moyoung.com/faces/v3/face-download</a></div><div><label>V4</label><a href="https://api.moyoung.com/faces/v4/face-download" target="_blank">https://api.moyoung.com/faces/v4/face-download</a></div></div>
+<details open><summary>查看已确认的差异</summary><table class='diff'><tr><th>字段路径</th><th>问题</th><th>旧接口实际值</th><th>V4 实际值</th></tr><tr><td><code>$.data</code></td><td>旧字段在 V4 缺失</td><td>[]</td><td>&lt;V4 未返回&gt;</td></tr><tr><td><code>$.msg</code></td><td>旧字段在 V4 缺失</td><td>Update successful</td><td>&lt;V4 未返回&gt;</td></tr></table><details class="raw"><summary>查看完整原始响应</summary><div class="raw"><div><h4>旧接口响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: [],
+  &quot;msg&quot;: &quot;Update successful&quot;
+}</pre></div><div><h4>V4 响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;message&quot;: &quot;ok&quot;,
+  &quot;meta&quot;: {
+    &quot;firmware&quot;: &quot;FHN&quot;,
+    &quot;mcu&quot;: 327,
+    &quot;platform&quot;: &quot;SIFLI&quot;,
+    &quot;model&quot;: &quot;SF561&quot;,
+    &quot;source&quot;: &quot;sifli&quot;
+  }
+}</pre></div></div></details></details></article><article class="case bad" data-status="issue" data-platform="思澈">
+<header><b>差异</b><strong>思澈</strong><span><code>/faces/sifli</code> → <code>/faces/v4/list</code></span><em>影响 1 条请求</em></header>
+<div class="urls"><div><label>旧接口</label><a href="https://api.moyoung.com/faces/sifli?tpls=14&amp;key=&amp;tested=yes&amp;tag_id=2&amp;fv=MOY-F9Z3-3.6.8&amp;per_page=20&amp;p=1&amp;max_size=2138112&amp;ver=&amp;lang=es" target="_blank">https://api.moyoung.com/faces/sifli?tpls=14&amp;key=&amp;tested=yes&amp;tag_id=2&amp;fv=MOY-F9Z3-3.6.8&amp;per_page=20&amp;p=1&amp;max_size=2138112&amp;ver=&amp;lang=es</a></div><div><label>V4</label><a href="https://api.moyoung.com/faces/v4/list?tpls=14&amp;key=&amp;tested=yes&amp;tag_id=2&amp;fv=MOY-F9Z3-3.6.8&amp;per_page=20&amp;p=1&amp;max_size=2138112&amp;ver=&amp;lang=es" target="_blank">https://api.moyoung.com/faces/v4/list?tpls=14&amp;key=&amp;tested=yes&amp;tag_id=2&amp;fv=MOY-F9Z3-3.6.8&amp;per_page=20&amp;p=1&amp;max_size=2138112&amp;ver=&amp;lang=es</a></div></div>
+<details open><summary>查看已确认的差异</summary><table class='diff'><tr><th>字段路径</th><th>问题</th><th>旧接口实际值</th><th>V4 实际值</th></tr><tr><td><code>$</code></td><td>JSON 结构不同（列表位置变化）</td><td>$.faces</td><td>$.data</td></tr><tr><td><code>$[*].remark_cn</code></td><td>旧字段在 V4 缺失</td><td></td><td>&lt;V4 未返回&gt;</td></tr><tr><td><code>$[*].tpl</code></td><td>旧字段在 V4 缺失</td><td>0</td><td>&lt;V4 未返回&gt;</td></tr></table><details class="raw"><summary>查看完整原始响应</summary><div class="raw"><div><h4>旧接口响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;faces&quot;: [
+    {
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/2746c4fc1a464ef1f974686d623ab7e0.zip&quot;,
+      &quot;id&quot;: 629,
+      &quot;name&quot;: &quot;Christmas Party&quot;,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/3e89b13010f0a9913fbcbc064dfdf55a.png&quot;,
+      &quot;remark_cn&quot;: &quot;&quot;,
+      &quot;remark_en&quot;: &quot;&quot;,
+      &quot;size&quot;: 401408,
+      &quot;tpl&quot;: 0,
+      &quot;tpls&quot;: [
+        14
+      ]
+    },
+    {
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/8630a6ea1e35b05d66e723b862320e18.zip&quot;,
+      &quot;id&quot;: 597,
+      &quot;name&quot;: &quot;Strawberry&quot;,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/7ac66cf7abb7fd7d0b01a48d95cc07fd.png&quot;,
+      &quot;remark_cn&quot;: &quot;咚，随机掉落的草莓，快接住！&quot;,
+      &quot;remark_en&quot;: &quot;Ding! Grab the randomly falling strawberry!&quot;,
+      &quot;size&quot;: 335872,
+      &quot;tpl&quot;: 0,
+      &quot;tpls&quot;: [
+        14
+      ]
+    }
+  ],
+  &quot;message&quot;: &quot;ok&quot;,
+  &quot;page&quot;: &quot;1&quot;,
+  &quot;per_page&quot;: &quot;20&quot;,
+  &quot;total&quot;: 2
+}</pre></div><div><h4>V4 响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: 629,
+      &quot;name&quot;: &quot;Christmas Party&quot;,
+      &quot;size&quot;: 401408,
+      &quot;uploader&quot;: &quot;尹晓冰&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/3e89b13010f0a9913fbcbc064dfdf55a.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/2746c4fc1a464ef1f974686d623ab7e0.zip&quot;,
+      &quot;tpls&quot;: [
+        14
+      ],
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 597,
+      &quot;name&quot;: &quot;Strawberry&quot;,
+      &quot;size&quot;: 335872,
+      &quot;uploader&quot;: &quot;尹晓冰&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/7ac66cf7abb7fd7d0b01a48d95cc07fd.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/8630a6ea1e35b05d66e723b862320e18.zip&quot;,
+      &quot;tpls&quot;: [
+        14
+      ],
+      &quot;remark_cn&quot;: &quot;咚，随机掉落的草莓，快接住！&quot;,
+      &quot;remark_en&quot;: &quot;Ding! Grab the randomly falling strawberry!&quot;,
+      &quot;firmware&quot;: []
+    }
+  ],
+  &quot;message&quot;: &quot;ok&quot;,
+  &quot;meta&quot;: {
+    &quot;firmware&quot;: &quot;F9Z&quot;,
+    &quot;mcu&quot;: 327,
+    &quot;platform&quot;: &quot;SIFLI&quot;,
+    &quot;model&quot;: &quot;SF561&quot;,
+    &quot;source&quot;: &quot;sifli&quot;
+  },
+  &quot;total&quot;: 2
+}</pre></div></div></details></details></article><article class="case bad" data-status="issue" data-platform="思澈">
+<header><b>差异</b><strong>思澈</strong><span><code>/faces/sifli/992</code> → <code>/faces/v4/face-detail</code></span><em>影响 1 条请求</em></header>
+<div class="urls"><div><label>旧接口</label><a href="https://api.moyoung.com/faces/sifli/992" target="_blank">https://api.moyoung.com/faces/sifli/992</a></div><div><label>V4</label><a href="https://api.moyoung.com/faces/v4/face-detail?id=992&amp;fv=MOY-F9Z3-3.6.8" target="_blank">https://api.moyoung.com/faces/v4/face-detail?id=992&amp;fv=MOY-F9Z3-3.6.8</a></div></div>
+<details open><summary>查看已确认的差异</summary><table class='diff'><tr><th>字段路径</th><th>问题</th><th>旧接口实际值</th><th>V4 实际值</th></tr><tr><td><code>$.face_list[*].tags</code></td><td>数组内容不同</td><td>[&quot;New Watch Faces&quot;]</td><td>[{&quot;id&quot;:1,&quot;name&quot;:&quot;New Watch Faces&quot;}]</td></tr><tr><td><code>$.tags</code></td><td>数组内容不同</td><td>[&quot;New Watch Faces&quot;]</td><td>[{&quot;id&quot;:1,&quot;name&quot;:&quot;New Watch Faces&quot;}]</td></tr></table><details class="raw"><summary>查看完整原始响应</summary><div class="raw"><div><h4>旧接口响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+    &quot;download&quot;: 0,
+    &quot;face_list&quot;: [
+      {
+        &quot;id&quot;: 991,
+        &quot;name&quot;: &quot;Spring&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/fddbf9f96648bcdffd40165842266bcb.png&quot;,
+        &quot;size&quot;: 483328,
+        &quot;tags&quot;: [
+          &quot;New Watch Faces&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: 989,
+        &quot;name&quot;: &quot;Wedding Card&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/6b6c7dfaf69c22f9bfae4fb859cd2960.png&quot;,
+        &quot;size&quot;: 540672,
+        &quot;tags&quot;: [
+          &quot;New Watch Faces&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: 670,
+        &quot;name&quot;: &quot;00670&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/b72f4792f3220bac6ba9e5d5b1aa3f56.png&quot;,
+        &quot;size&quot;: 712704,
+        &quot;tags&quot;: [
+          &quot;New Watch Faces&quot;
+        ]
+      },
+      {
+        &quot;id&quot;: 658,
+        &quot;name&quot;: &quot;Cat&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/55ff5accc50bb7f8084f19d0ee5e38dc.png&quot;,
+        &quot;size&quot;: 278528,
+        &quot;tags&quot;: [
+          &quot;New Watch Faces&quot;
+        ]
+      }
+    ],
+    &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/27e56708e2cf34318c9d8ebf1c496414.zip&quot;,
+    &quot;id&quot;: 992,
+    &quot;name&quot;: &quot;Christmas&quot;,
+    &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/8889915bc35b9187fd7f301abced3361.png&quot;,
+    &quot;remark_cn&quot;: &quot;&quot;,
+    &quot;remark_en&quot;: &quot;&quot;,
+    &quot;size&quot;: 466944,
+    &quot;tags&quot;: [
+      &quot;New Watch Faces&quot;
+    ]
+  },
+  &quot;message&quot;: &quot;ok&quot;
+}</pre></div><div><h4>V4 响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+    &quot;id&quot;: 992,
+    &quot;name&quot;: &quot;Christmas&quot;,
+    &quot;tags&quot;: [
+      {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;New Watch Faces&quot;
+      }
+    ],
+    &quot;download&quot;: 0,
+    &quot;size&quot;: 466944,
+    &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/27e56708e2cf34318c9d8ebf1c496414.zip&quot;,
+    &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/8889915bc35b9187fd7f301abced3361.png&quot;,
+    &quot;uploader&quot;: &quot;田沅金&quot;,
+    &quot;remark_cn&quot;: &quot;&quot;,
+    &quot;remark_en&quot;: &quot;&quot;,
+    &quot;description&quot;: &quot;&quot;,
+    &quot;is_premium&quot;: false,
+    &quot;face_list&quot;: [
+      {
+        &quot;id&quot;: 991,
+        &quot;name&quot;: &quot;Spring&quot;,
+        &quot;size&quot;: 483328,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;田沅金&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/fddbf9f96648bcdffd40165842266bcb.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 989,
+        &quot;name&quot;: &quot;Wedding Card&quot;,
+        &quot;size&quot;: 540672,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;田沅金&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/6b6c7dfaf69c22f9bfae4fb859cd2960.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 670,
+        &quot;name&quot;: &quot;00670&quot;,
+        &quot;size&quot;: 712704,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;田沅金&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/b72f4792f3220bac6ba9e5d5b1aa3f56.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 658,
+        &quot;name&quot;: &quot;Cat&quot;,
+        &quot;size&quot;: 278528,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;田沅金&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/55ff5accc50bb7f8084f19d0ee5e38dc.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          }
+        ]
+      }
+    ]
+  },
+  &quot;message&quot;: &quot;ok&quot;,
+  &quot;meta&quot;: {
+    &quot;firmware&quot;: &quot;F9Z&quot;,
+    &quot;mcu&quot;: 327,
+    &quot;platform&quot;: &quot;SIFLI&quot;,
+    &quot;model&quot;: &quot;SF561&quot;,
+    &quot;source&quot;: &quot;sifli&quot;
+  }
+}</pre></div></div></details></details></article><article class="case bad" data-status="issue" data-platform="杰理">
+<header><b>差异</b><strong>杰理</strong><span><code>/faces/new/face-detail</code> → <code>/faces/v4/face-detail</code></span><em>影响 1 条请求</em></header>
+<div class="urls"><div><label>旧接口</label><a href="https://api.moyoung.com/faces/new/face-detail?api_ver=53&amp;func_ver=3&amp;fv=MOY-96G2-2.0.5&amp;id=22773&amp;lang=en&amp;max_size=999999999&amp;tested=yes&amp;tpls=98" target="_blank">https://api.moyoung.com/faces/new/face-detail?api_ver=53&amp;func_ver=3&amp;fv=MOY-96G2-2.0.5&amp;id=22773&amp;lang=en&amp;max_size=999999999&amp;tested=yes&amp;tpls=98</a></div><div><label>V4</label><a href="https://api.moyoung.com/faces/v4/face-detail?api_ver=53&amp;func_ver=3&amp;fv=MOY-96G2-2.0.5&amp;id=22773&amp;lang=en&amp;max_size=999999999&amp;tested=yes&amp;tpls=98" target="_blank">https://api.moyoung.com/faces/v4/face-detail?api_ver=53&amp;func_ver=3&amp;fv=MOY-96G2-2.0.5&amp;id=22773&amp;lang=en&amp;max_size=999999999&amp;tested=yes&amp;tpls=98</a></div></div>
+<details open><summary>查看已确认的差异</summary><table class='diff'><tr><th>字段路径</th><th>问题</th><th>旧接口实际值</th><th>V4 实际值</th></tr><tr><td><code>$.remark_lang</code></td><td>旧字段在 V4 缺失</td><td>No introduction available</td><td>&lt;V4 未返回&gt;</td></tr><tr><td><code>$.tags</code></td><td>值不同</td><td>{&quot;1&quot;:&quot;New Watch Faces&quot;,&quot;8&quot;:&quot;Activity&quot;}</td><td>[{&quot;id&quot;:1,&quot;name&quot;:&quot;New Watch Faces&quot;},{&quot;id&quot;:8,&quot;name&quot;:&quot;Activity&quot;}]</td></tr></table><details class="raw"><summary>查看完整原始响应</summary><div class="raw"><div><h4>旧接口响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+    &quot;download&quot;: 0,
+    &quot;face_list&quot;: [
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 24608,
+        &quot;name&quot;: &quot;Orbit Moonphase&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/b98640704f201ded2ff5bb9c48de2e03.png&quot;,
+        &quot;size&quot;: 107188,
+        &quot;uploader&quot;: &quot;郭芊芊&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 24554,
+        &quot;name&quot;: &quot;Obsidian Moment&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/79aae254780a706b40e5141a7c3a0c51.png&quot;,
+        &quot;size&quot;: 124960,
+        &quot;uploader&quot;: &quot;陈晓静&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 24477,
+        &quot;name&quot;: &quot;Midnight Roman&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/d5b5e6e86a0170704900c10bbafd4b0c.png&quot;,
+        &quot;size&quot;: 202736,
+        &quot;uploader&quot;: &quot;杨芳&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 24435,
+        &quot;name&quot;: &quot;Classic Sport Chrono&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/fead3bb45ca02b35495571f92f791c92.png&quot;,
+        &quot;size&quot;: 75476,
+        &quot;uploader&quot;: &quot;李伟杰&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 24124,
+        &quot;name&quot;: &quot;Interstellar Voyage&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/7b224eb39e793701c6e60223fa24ab37.png&quot;,
+        &quot;size&quot;: 201408,
+        &quot;uploader&quot;: &quot;陈晓静&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 24066,
+        &quot;name&quot;: &quot;Daily Vibe&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/147ac609eebc8da44473d9e1da344d25.png&quot;,
+        &quot;size&quot;: 116572,
+        &quot;uploader&quot;: &quot;杨芳&quot;
+      }
+    ],
+    &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/besMoc3rZ3nJhmq19gZH3oiIf7iKrNmw.bin?face-id=22773&amp;type=new&quot;,
+    &quot;id&quot;: 22773,
+    &quot;name&quot;: &quot;Retro LCD&quot;,
+    &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/71dae34f1b1aeb5ae57ecc61d49d79e6.png&quot;,
+    &quot;remark_lang&quot;: &quot;No introduction available&quot;,
+    &quot;size&quot;: 160752,
+    &quot;tags&quot;: {
+      &quot;1&quot;: &quot;New Watch Faces&quot;,
+      &quot;8&quot;: &quot;Activity&quot;
+    },
+    &quot;uploader&quot;: &quot;陈晓静&quot;
+  },
+  &quot;message&quot;: &quot;ok&quot;
+}</pre></div><div><h4>V4 响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+    &quot;id&quot;: 22773,
+    &quot;name&quot;: &quot;Retro LCD&quot;,
+    &quot;tags&quot;: [
+      {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;New Watch Faces&quot;
+      },
+      {
+        &quot;id&quot;: 8,
+        &quot;name&quot;: &quot;Activity&quot;
+      }
+    ],
+    &quot;download&quot;: 0,
+    &quot;size&quot;: 160752,
+    &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/besMoc3rZ3nJhmq19gZH3oiIf7iKrNmw.bin?face-id=22773&amp;type=new&quot;,
+    &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/71dae34f1b1aeb5ae57ecc61d49d79e6.png&quot;,
+    &quot;uploader&quot;: &quot;陈晓静&quot;,
+    &quot;remark_cn&quot;: &quot;&quot;,
+    &quot;remark_en&quot;: &quot;&quot;,
+    &quot;description&quot;: &quot;&quot;,
+    &quot;is_premium&quot;: false,
+    &quot;face_list&quot;: [
+      {
+        &quot;id&quot;: 24608,
+        &quot;name&quot;: &quot;Orbit Moonphase&quot;,
+        &quot;size&quot;: 107188,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;郭芊芊&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/b98640704f201ded2ff5bb9c48de2e03.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          },
+          {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Classic&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 24554,
+        &quot;name&quot;: &quot;Obsidian Moment&quot;,
+        &quot;size&quot;: 124960,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;陈晓静&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/79aae254780a706b40e5141a7c3a0c51.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          },
+          {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Classic&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 24477,
+        &quot;name&quot;: &quot;Midnight Roman&quot;,
+        &quot;size&quot;: 202736,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;杨芳&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/d5b5e6e86a0170704900c10bbafd4b0c.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Classic&quot;
+          },
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 24435,
+        &quot;name&quot;: &quot;Classic Sport Chrono&quot;,
+        &quot;size&quot;: 75476,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;李伟杰&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/fead3bb45ca02b35495571f92f791c92.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          },
+          {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Classic&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 24124,
+        &quot;name&quot;: &quot;Interstellar Voyage&quot;,
+        &quot;size&quot;: 201408,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;陈晓静&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/7b224eb39e793701c6e60223fa24ab37.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          },
+          {
+            &quot;id&quot;: 8,
+            &quot;name&quot;: &quot;Activity&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 24066,
+        &quot;name&quot;: &quot;Daily Vibe&quot;,
+        &quot;size&quot;: 116572,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;杨芳&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/147ac609eebc8da44473d9e1da344d25.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          },
+          {
+            &quot;id&quot;: 8,
+            &quot;name&quot;: &quot;Activity&quot;
+          }
+        ]
+      }
+    ]
+  },
+  &quot;message&quot;: &quot;ok&quot;,
+  &quot;meta&quot;: {
+    &quot;firmware&quot;: &quot;96G&quot;,
+    &quot;mcu&quot;: 369,
+    &quot;platform&quot;: &quot;杰理&quot;,
+    &quot;model&quot;: &quot;JL7012A7&quot;,
+    &quot;source&quot;: &quot;new&quot;
+  }
+}</pre></div></div></details></details></article><article class="case bad" data-status="issue" data-platform="杰理">
+<header><b>差异</b><strong>杰理</strong><span><code>/faces/new/face-list</code> → <code>/faces/v4/list</code></span><em>影响 1 条请求</em></header>
+<div class="urls"><div><label>旧接口</label><a href="https://api.moyoung.com/faces/new/face-list?fv=MOY-V4G5-2.0.2&amp;p=2&amp;per_page=20&amp;api_ver=53&amp;tpls=98&amp;tested=yes&amp;tag_id=2&amp;lang=es&amp;max_size=1310720&amp;func_ver=3" target="_blank">https://api.moyoung.com/faces/new/face-list?fv=MOY-V4G5-2.0.2&amp;p=2&amp;per_page=20&amp;api_ver=53&amp;tpls=98&amp;tested=yes&amp;tag_id=2&amp;lang=es&amp;max_size=1310720&amp;func_ver=3</a></div><div><label>V4</label><a href="https://api.moyoung.com/faces/v4/list?fv=MOY-V4G5-2.0.2&amp;p=2&amp;per_page=20&amp;api_ver=53&amp;tpls=98&amp;tested=yes&amp;tag_id=2&amp;lang=es&amp;max_size=1310720&amp;func_ver=3" target="_blank">https://api.moyoung.com/faces/v4/list?fv=MOY-V4G5-2.0.2&amp;p=2&amp;per_page=20&amp;api_ver=53&amp;tpls=98&amp;tested=yes&amp;tag_id=2&amp;lang=es&amp;max_size=1310720&amp;func_ver=3</a></div></div>
+<details open><summary>查看已确认的差异</summary><table class='diff'><tr><th>字段路径</th><th>问题</th><th>旧接口实际值</th><th>V4 实际值</th></tr><tr><td><code>$[*].func_ver</code></td><td>旧字段在 V4 缺失</td><td>0</td><td>&lt;V4 未返回&gt;</td></tr></table><details class="raw"><summary>查看完整原始响应</summary><div class="raw"><div><h4>旧接口响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: [
+    {
+      &quot;api_ver&quot;: 35,
+      &quot;download&quot;: 0,
+      &quot;func_ver&quot;: 0,
+      &quot;id&quot;: 4379,
+      &quot;name&quot;: &quot;Black&quot;,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/89baf4dccd0ea2e849178c8ce136e9be.png&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;size&quot;: 165532,
+      &quot;uploader&quot;: &quot;冉兴&quot;
+    },
+    {
+      &quot;api_ver&quot;: 35,
+      &quot;download&quot;: 0,
+      &quot;func_ver&quot;: 0,
+      &quot;id&quot;: 4140,
+      &quot;name&quot;: &quot;Enchanted Light&quot;,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/AKi8xyJ1yrKlQ4FRzMS6werdXGQB1ZJ5.png&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;size&quot;: 224636,
+      &quot;uploader&quot;: &quot;曹锦彬&quot;
+    },
+    {
+      &quot;api_ver&quot;: 35,
+      &quot;download&quot;: 0,
+      &quot;func_ver&quot;: 0,
+      &quot;id&quot;: 3988,
+      &quot;name&quot;: &quot;Blue Steel&quot;,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/oRkUCtpxBGyOF3gKOEbr8tWHVoonAQqM.png&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;size&quot;: 193900,
+      &quot;uploader&quot;: &quot;曹锦彬&quot;
+    },
+    {
+      &quot;api_ver&quot;: 46,
+      &quot;download&quot;: 0,
+      &quot;func_ver&quot;: 0,
+      &quot;id&quot;: 1516,
+      &quot;name&quot;: &quot;Dino&quot;,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/6529093d75721c5d806ef4d96ffffebf.png&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;size&quot;: 630736,
+      &quot;uploader&quot;: &quot;胡锦平&quot;
+    }
+  ],
+  &quot;message&quot;: &quot;ok&quot;,
+  &quot;total&quot;: 24
+}</pre></div><div><h4>V4 响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: [
+    {
+      &quot;id&quot;: 4379,
+      &quot;name&quot;: &quot;Black&quot;,
+      &quot;size&quot;: 165532,
+      &quot;uploader&quot;: &quot;冉兴&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/89baf4dccd0ea2e849178c8ce136e9be.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/DuVpbb684ni3FrXrGrJYBgrMi4nviRsM.bin&quot;,
+      &quot;tpls&quot;: [
+        98
+      ],
+      &quot;description&quot;: &quot;With its simple design style, this digital black watch is able to accurately display the time, heart rate and other functions.&quot;,
+      &quot;api_ver&quot;: 35,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 4140,
+      &quot;name&quot;: &quot;Enchanted Light&quot;,
+      &quot;size&quot;: 224636,
+      &quot;uploader&quot;: &quot;曹锦彬&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/AKi8xyJ1yrKlQ4FRzMS6werdXGQB1ZJ5.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/xwQBKwBpx3mrmSf339hdMVkTWuM5Eb6V.bin&quot;,
+      &quot;tpls&quot;: [
+        98
+      ],
+      &quot;description&quot;: &quot;Radiant light, colorful and dreamlike.&quot;,
+      &quot;api_ver&quot;: 35,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 3988,
+      &quot;name&quot;: &quot;Blue Steel&quot;,
+      &quot;size&quot;: 193900,
+      &quot;uploader&quot;: &quot;曹锦彬&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/oRkUCtpxBGyOF3gKOEbr8tWHVoonAQqM.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/0wSwz6DRzrD2THAfbIJERhNO6lOV1xRf.bin&quot;,
+      &quot;tpls&quot;: [
+        98
+      ],
+      &quot;description&quot;: &quot;Like steel, emitting a faint blue light&quot;,
+      &quot;api_ver&quot;: 35,
+      &quot;firmware&quot;: []
+    },
+    {
+      &quot;id&quot;: 1516,
+      &quot;name&quot;: &quot;Dino&quot;,
+      &quot;size&quot;: 630736,
+      &quot;uploader&quot;: &quot;胡锦平&quot;,
+      &quot;recommend&quot;: 0,
+      &quot;download&quot;: 0,
+      &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/6529093d75721c5d806ef4d96ffffebf.png&quot;,
+      &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/8EeCVbf6Q52OX47o7UB3SkyO4xAbcSnm.bin&quot;,
+      &quot;tpls&quot;: [
+        98
+      ],
+      &quot;api_ver&quot;: 46,
+      &quot;firmware&quot;: []
+    }
+  ],
+  &quot;message&quot;: &quot;ok&quot;,
+  &quot;meta&quot;: {
+    &quot;firmware&quot;: &quot;V4G&quot;,
+    &quot;mcu&quot;: 323,
+    &quot;platform&quot;: &quot;杰理&quot;,
+    &quot;model&quot;: &quot;JL7013A6_JL_QFN68&quot;,
+    &quot;source&quot;: &quot;new&quot;
+  },
+  &quot;total&quot;: 24
+}</pre></div></div></details></details></article><article class="case bad" data-status="issue" data-platform="杰理707">
+<header><b>差异</b><strong>杰理707</strong><span><code>/faces/new/face-detail</code> → <code>/faces/v4/face-detail</code></span><em>影响 1 条请求</em></header>
+<div class="urls"><div><label>旧接口</label><a href="https://api.moyoung.com/faces/new/face-detail?fv=MOY-W892-2.0.0&amp;api_ver=53&amp;id=18887&amp;lang=en&amp;max_size=720896&amp;func_ver=3" target="_blank">https://api.moyoung.com/faces/new/face-detail?fv=MOY-W892-2.0.0&amp;api_ver=53&amp;id=18887&amp;lang=en&amp;max_size=720896&amp;func_ver=3</a></div><div><label>V4</label><a href="https://api.moyoung.com/faces/v4/face-detail?fv=MOY-W892-2.0.0&amp;api_ver=53&amp;id=18887&amp;lang=en&amp;max_size=720896&amp;func_ver=3" target="_blank">https://api.moyoung.com/faces/v4/face-detail?fv=MOY-W892-2.0.0&amp;api_ver=53&amp;id=18887&amp;lang=en&amp;max_size=720896&amp;func_ver=3</a></div></div>
+<details open><summary>查看已确认的差异</summary><table class='diff'><tr><th>字段路径</th><th>问题</th><th>旧接口实际值</th><th>V4 实际值</th></tr><tr><td><code>$.tags</code></td><td>值不同</td><td>{&quot;1&quot;:&quot;New Watch Faces&quot;,&quot;7&quot;:&quot;Classic&quot;}</td><td>[{&quot;id&quot;:7,&quot;name&quot;:&quot;Classic&quot;},{&quot;id&quot;:1,&quot;name&quot;:&quot;New Watch Faces&quot;}]</td></tr></table><details class="raw"><summary>查看完整原始响应</summary><div class="raw"><div><h4>旧接口响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+    &quot;download&quot;: 0,
+    &quot;face_list&quot;: [
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 18944,
+        &quot;name&quot;: &quot;Rapid Combustion&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/3c8f358cd617ea2928dac6a43edc10f6.png&quot;,
+        &quot;size&quot;: 523888,
+        &quot;uploader&quot;: &quot;陈晓静&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 18908,
+        &quot;name&quot;: &quot;Blitz&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/6b19388fa552c1cd1d26ba8920dafe76.png&quot;,
+        &quot;size&quot;: 584508,
+        &quot;uploader&quot;: &quot;杨芳&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 18732,
+        &quot;name&quot;: &quot;EdgeSpeed Pulse&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/d59ec2941dcfdb7c9e1d5e28c5b464a9.png&quot;,
+        &quot;size&quot;: 518828,
+        &quot;uploader&quot;: &quot;李伟杰&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 18712,
+        &quot;name&quot;: &quot;Neon Spark&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/3c01d87d80873c4cdb212550478ca6c3.png&quot;,
+        &quot;size&quot;: 579856,
+        &quot;uploader&quot;: &quot;杨芳&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 18705,
+        &quot;name&quot;: &quot;Shadow&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/0c5888bb2d72605e728b65c2aa5a4f00.png&quot;,
+        &quot;size&quot;: 387440,
+        &quot;uploader&quot;: &quot;陈晓静&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 18684,
+        &quot;name&quot;: &quot;Starburst&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/4f1832de282abaa43fc3cb04f350f0f6.png&quot;,
+        &quot;size&quot;: 375360,
+        &quot;uploader&quot;: &quot;许秋梦&quot;
+      }
+    ],
+    &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/doD0gzkrOhGJ0PCGOk96NONwaVJrn4D3.bin?face-id=18887&amp;type=new&quot;,
+    &quot;id&quot;: 18887,
+    &quot;name&quot;: &quot;Black Edge Core&quot;,
+    &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/f44adaee0212f172c8028a63c1bc0acb.png&quot;,
+    &quot;remark_lang&quot;: &quot;No introduction available&quot;,
+    &quot;size&quot;: 697820,
+    &quot;tags&quot;: {
+      &quot;1&quot;: &quot;New Watch Faces&quot;,
+      &quot;7&quot;: &quot;Classic&quot;
+    },
+    &quot;uploader&quot;: &quot;李伟杰&quot;
+  },
+  &quot;message&quot;: &quot;ok&quot;
+}</pre></div><div><h4>V4 响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+    &quot;id&quot;: 18887,
+    &quot;name&quot;: &quot;Black Edge Core&quot;,
+    &quot;tags&quot;: [
+      {
+        &quot;id&quot;: 7,
+        &quot;name&quot;: &quot;Classic&quot;
+      },
+      {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;New Watch Faces&quot;
+      }
+    ],
+    &quot;download&quot;: 0,
+    &quot;size&quot;: 697820,
+    &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/doD0gzkrOhGJ0PCGOk96NONwaVJrn4D3.bin?face-id=18887&amp;type=new&quot;,
+    &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/f44adaee0212f172c8028a63c1bc0acb.png&quot;,
+    &quot;uploader&quot;: &quot;李伟杰&quot;,
+    &quot;remark_cn&quot;: &quot;&quot;,
+    &quot;remark_en&quot;: &quot;&quot;,
+    &quot;description&quot;: &quot;&quot;,
+    &quot;is_premium&quot;: false,
+    &quot;face_list&quot;: [
+      {
+        &quot;id&quot;: 18944,
+        &quot;name&quot;: &quot;Rapid Combustion&quot;,
+        &quot;size&quot;: 523888,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;陈晓静&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/3c8f358cd617ea2928dac6a43edc10f6.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Classic&quot;
+          },
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 18908,
+        &quot;name&quot;: &quot;Blitz&quot;,
+        &quot;size&quot;: 584508,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;杨芳&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/6b19388fa552c1cd1d26ba8920dafe76.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Classic&quot;
+          },
+          {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;Recommended&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 18732,
+        &quot;name&quot;: &quot;EdgeSpeed Pulse&quot;,
+        &quot;size&quot;: 518828,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;李伟杰&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/d59ec2941dcfdb7c9e1d5e28c5b464a9.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Classic&quot;
+          },
+          {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;Recommended&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 18712,
+        &quot;name&quot;: &quot;Neon Spark&quot;,
+        &quot;size&quot;: 579856,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;杨芳&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/3c01d87d80873c4cdb212550478ca6c3.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Classic&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 18705,
+        &quot;name&quot;: &quot;Shadow&quot;,
+        &quot;size&quot;: 387440,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;陈晓静&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/0c5888bb2d72605e728b65c2aa5a4f00.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Classic&quot;
+          },
+          {
+            &quot;id&quot;: 2,
+            &quot;name&quot;: &quot;Recommended&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 18684,
+        &quot;name&quot;: &quot;Starburst&quot;,
+        &quot;size&quot;: 375360,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;许秋梦&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/4f1832de282abaa43fc3cb04f350f0f6.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Classic&quot;
+          },
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          }
+        ]
+      }
+    ]
+  },
+  &quot;message&quot;: &quot;ok&quot;,
+  &quot;meta&quot;: {
+    &quot;firmware&quot;: &quot;W89&quot;,
+    &quot;mcu&quot;: 569,
+    &quot;platform&quot;: &quot;杰理&quot;,
+    &quot;model&quot;: &quot;AC7074A7S_ZFA&quot;,
+    &quot;source&quot;: &quot;new&quot;
+  }
+}</pre></div></div></details></details></article><article class="case bad" data-status="issue" data-platform="杰理nandflash">
+<header><b>差异</b><strong>杰理nandflash</strong><span><code>/faces/new/face-detail</code> → <code>/faces/v4/face-detail</code></span><em>影响 1 条请求</em></header>
+<div class="urls"><div><label>旧接口</label><a href="https://api.moyoung.com/faces/new/face-detail?api_ver=0&amp;func_ver=0&amp;fv=MOY-JIA2-2.0.0&amp;id=7356&amp;lang=ar&amp;max_size=999999999&amp;tested=yes&amp;tpls=131" target="_blank">https://api.moyoung.com/faces/new/face-detail?api_ver=0&amp;func_ver=0&amp;fv=MOY-JIA2-2.0.0&amp;id=7356&amp;lang=ar&amp;max_size=999999999&amp;tested=yes&amp;tpls=131</a></div><div><label>V4</label><a href="https://api.moyoung.com/faces/v4/face-detail?api_ver=0&amp;func_ver=0&amp;fv=MOY-JIA2-2.0.0&amp;id=7356&amp;lang=ar&amp;max_size=999999999&amp;tested=yes&amp;tpls=131" target="_blank">https://api.moyoung.com/faces/v4/face-detail?api_ver=0&amp;func_ver=0&amp;fv=MOY-JIA2-2.0.0&amp;id=7356&amp;lang=ar&amp;max_size=999999999&amp;tested=yes&amp;tpls=131</a></div></div>
+<details open><summary>查看已确认的差异</summary><table class='diff'><tr><th>字段路径</th><th>问题</th><th>旧接口实际值</th><th>V4 实际值</th></tr><tr><td><code>$.tags</code></td><td>值不同</td><td>{&quot;4&quot;:&quot;Funny&quot;,&quot;5&quot;:&quot;Colorful&quot;,&quot;6&quot;:&quot;Modern&quot;}</td><td>[{&quot;id&quot;:6,&quot;name&quot;:&quot;Modern&quot;},{&quot;id&quot;:5,&quot;name&quot;:&quot;Colorful&quot;},{&quot;id&quot;:4,&quot;name&quot;:&quot;Funny&quot;}]</td></tr></table><details class="raw"><summary>查看完整原始响应</summary><div class="raw"><div><h4>旧接口响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+    &quot;download&quot;: 0,
+    &quot;face_list&quot;: [
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 10153,
+        &quot;name&quot;: &quot;Journey&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/2fcc672af302cf3fd103a2e501c6ee84.png&quot;,
+        &quot;size&quot;: 85532,
+        &quot;uploader&quot;: &quot;严军义&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 10151,
+        &quot;name&quot;: &quot;Winter&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/a658f768a32468a32a907e43481d5e25.png&quot;,
+        &quot;size&quot;: 98712,
+        &quot;uploader&quot;: &quot;严军义&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 10135,
+        &quot;name&quot;: &quot;Summer&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/82dccbda97c7d4d6b141a74044e0f192.png&quot;,
+        &quot;size&quot;: 336844,
+        &quot;uploader&quot;: &quot;胡锦平&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 10132,
+        &quot;name&quot;: &quot;Astronaut&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/10836cec6c3c4e5df7ef5513f013bb57.png&quot;,
+        &quot;size&quot;: 429000,
+        &quot;uploader&quot;: &quot;胡锦平&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 10130,
+        &quot;name&quot;: &quot;Spring&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/c114443680d5e70858f3c3ede77385c6.png&quot;,
+        &quot;size&quot;: 139292,
+        &quot;uploader&quot;: &quot;胡锦平&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 10055,
+        &quot;name&quot;: &quot;Deer&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/ccc16e4632221ff99856eb76a1217b8d.png&quot;,
+        &quot;size&quot;: 62724,
+        &quot;uploader&quot;: &quot;王健&quot;
+      }
+    ],
+    &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/eqi6nvbJKbejB9H65Y44UdkFNIT2I2v5.bin?face-id=7356&amp;type=new&quot;,
+    &quot;id&quot;: 7356,
+    &quot;name&quot;: &quot;Red Flame Time&quot;,
+    &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/5EkhP5PHvDVNhPV8J8vDGTa2xkTI7hiW.png&quot;,
+    &quot;remark_lang&quot;: &quot;No introduction available&quot;,
+    &quot;size&quot;: 181396,
+    &quot;tags&quot;: {
+      &quot;4&quot;: &quot;Funny&quot;,
+      &quot;5&quot;: &quot;Colorful&quot;,
+      &quot;6&quot;: &quot;Modern&quot;
+    },
+    &quot;uploader&quot;: &quot;KUN&quot;
+  },
+  &quot;message&quot;: &quot;ok&quot;
+}</pre></div><div><h4>V4 响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+    &quot;id&quot;: 7356,
+    &quot;name&quot;: &quot;Red Flame Time&quot;,
+    &quot;tags&quot;: [
+      {
+        &quot;id&quot;: 6,
+        &quot;name&quot;: &quot;Modern&quot;
+      },
+      {
+        &quot;id&quot;: 5,
+        &quot;name&quot;: &quot;Colorful&quot;
+      },
+      {
+        &quot;id&quot;: 4,
+        &quot;name&quot;: &quot;Funny&quot;
+      }
+    ],
+    &quot;download&quot;: 0,
+    &quot;size&quot;: 181396,
+    &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/eqi6nvbJKbejB9H65Y44UdkFNIT2I2v5.bin?face-id=7356&amp;type=new&quot;,
+    &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/5EkhP5PHvDVNhPV8J8vDGTa2xkTI7hiW.png&quot;,
+    &quot;uploader&quot;: &quot;KUN&quot;,
+    &quot;remark_cn&quot;: &quot;&quot;,
+    &quot;remark_en&quot;: &quot;&quot;,
+    &quot;description&quot;: &quot;&quot;,
+    &quot;is_premium&quot;: false,
+    &quot;face_list&quot;: [
+      {
+        &quot;id&quot;: 10153,
+        &quot;name&quot;: &quot;Journey&quot;,
+        &quot;size&quot;: 85532,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;严军义&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/2fcc672af302cf3fd103a2e501c6ee84.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          },
+          {
+            &quot;id&quot;: 4,
+            &quot;name&quot;: &quot;Funny&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 10151,
+        &quot;name&quot;: &quot;Winter&quot;,
+        &quot;size&quot;: 98712,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;严军义&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/a658f768a32468a32a907e43481d5e25.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          },
+          {
+            &quot;id&quot;: 5,
+            &quot;name&quot;: &quot;Colorful&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 10135,
+        &quot;name&quot;: &quot;Summer&quot;,
+        &quot;size&quot;: 336844,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;胡锦平&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/82dccbda97c7d4d6b141a74044e0f192.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          },
+          {
+            &quot;id&quot;: 4,
+            &quot;name&quot;: &quot;Funny&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 10132,
+        &quot;name&quot;: &quot;Astronaut&quot;,
+        &quot;size&quot;: 429000,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;胡锦平&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/10836cec6c3c4e5df7ef5513f013bb57.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          },
+          {
+            &quot;id&quot;: 4,
+            &quot;name&quot;: &quot;Funny&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 10130,
+        &quot;name&quot;: &quot;Spring&quot;,
+        &quot;size&quot;: 139292,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;胡锦平&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/c114443680d5e70858f3c3ede77385c6.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;New Watch Faces&quot;
+          },
+          {
+            &quot;id&quot;: 4,
+            &quot;name&quot;: &quot;Funny&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 10055,
+        &quot;name&quot;: &quot;Deer&quot;,
+        &quot;size&quot;: 62724,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;王健&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/ccc16e4632221ff99856eb76a1217b8d.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 4,
+            &quot;name&quot;: &quot;Funny&quot;
+          }
+        ]
+      }
+    ]
+  },
+  &quot;message&quot;: &quot;ok&quot;,
+  &quot;meta&quot;: {
+    &quot;firmware&quot;: &quot;JIA&quot;,
+    &quot;mcu&quot;: 448,
+    &quot;platform&quot;: &quot;杰理&quot;,
+    &quot;model&quot;: &quot;JL7012A6S&quot;,
+    &quot;source&quot;: &quot;new&quot;
+  }
+}</pre></div></div></details></details></article><article class="case bad" data-status="issue" data-platform="海思">
+<header><b>差异</b><strong>海思</strong><span><code>/faces/new/face-detail</code> → <code>/faces/v4/face-detail</code></span><em>影响 1 条请求</em></header>
+<div class="urls"><div><label>旧接口</label><a href="https://api.moyoung.com/faces/new/face-detail?api_ver=6&amp;api_ver_all=%5B%225%22%3A%204%2C%20%229%22%3A%203%2C%20%224%22%3A%207%2C%20%220%22%3A%2022%2C%20%221%22%3A%2010%2C%20%226%22%3A%202%2C%20%227%22%3A%207%2C%20%228%22%3A%201%2C%20%2210%22%3A%203%2C%20%223%22%3A%2017%2C%20%2211%22%3A%202%2C%20%222%22%3A%2010%5D&amp;func_ver=12&amp;fv=MOY-H1O3-3.0.0&amp;id=8765&amp;lang=ja&amp;max_size=999999999&amp;tested=yes&amp;tpls=134" target="_blank">https://api.moyoung.com/faces/new/face-detail?api_ver=6&amp;api_ver_all=%5B%225%22%3A%204%2C%20%229%22%3A%203%2C%20%224%22%3A%207%2C%20%220%22%3A%2022%2C%20%221%22%3A%2010%2C%20%226%22%3A%202%2C%20%227%22%3A%207%2C%20%228%22%3A%201%2C%20%2210%22%3A%203%2C%20%223%22%3A%2017%2C%20%2211%22%3A%202%2C%20%222%22%3A%2010%5D&amp;func_ver=12&amp;fv=MOY-H1O3-3.0.0&amp;id=8765&amp;lang=ja&amp;max_size=999999999&amp;tested=yes&amp;tpls=134</a></div><div><label>V4</label><a href="https://api.moyoung.com/faces/v4/face-detail?api_ver=6&amp;api_ver_all=%5B%225%22%3A+4%2C+%229%22%3A+3%2C+%224%22%3A+7%2C+%220%22%3A+22%2C+%221%22%3A+10%2C+%226%22%3A+2%2C+%227%22%3A+7%2C+%228%22%3A+1%2C+%2210%22%3A+3%2C+%223%22%3A+17%2C+%2211%22%3A+2%2C+%222%22%3A+10%5D&amp;func_ver=12&amp;fv=MOY-H1O3-3.0.0&amp;id=8765&amp;lang=ja&amp;max_size=999999999&amp;tested=yes&amp;tpls=134" target="_blank">https://api.moyoung.com/faces/v4/face-detail?api_ver=6&amp;api_ver_all=%5B%225%22%3A+4%2C+%229%22%3A+3%2C+%224%22%3A+7%2C+%220%22%3A+22%2C+%221%22%3A+10%2C+%226%22%3A+2%2C+%227%22%3A+7%2C+%228%22%3A+1%2C+%2210%22%3A+3%2C+%223%22%3A+17%2C+%2211%22%3A+2%2C+%222%22%3A+10%5D&amp;func_ver=12&amp;fv=MOY-H1O3-3.0.0&amp;id=8765&amp;lang=ja&amp;max_size=999999999&amp;tested=yes&amp;tpls=134</a></div></div>
+<details open><summary>查看已确认的差异</summary><table class='diff'><tr><th>字段路径</th><th>问题</th><th>旧接口实际值</th><th>V4 实际值</th></tr><tr><td><code>$.remark_lang</code></td><td>旧字段在 V4 缺失</td><td>The afterglow of the setting sun is like a golden tapestry, covering the sky</td><td>&lt;V4 未返回&gt;</td></tr><tr><td><code>$.tags</code></td><td>值不同</td><td>{&quot;3&quot;:&quot;Art&quot;}</td><td>[{&quot;id&quot;:3,&quot;name&quot;:&quot;Art&quot;}]</td></tr></table><details class="raw"><summary>查看完整原始响应</summary><div class="raw"><div><h4>旧接口响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+    &quot;download&quot;: 0,
+    &quot;face_list&quot;: [
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 8380,
+        &quot;name&quot;: &quot;Crab&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/2c6c92ff1421d26552d4396b9dc67143.png&quot;,
+        &quot;size&quot;: 43493,
+        &quot;uploader&quot;: &quot;孔繁&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 8379,
+        &quot;name&quot;: &quot;Cows&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/56c4374cfcc4027d04928c4f98e6e7c0.png&quot;,
+        &quot;size&quot;: 47969,
+        &quot;uploader&quot;: &quot;孔繁&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 8996,
+        &quot;name&quot;: &quot;Summer limit&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/fP6wVw4Kn88b3adIzeVeAzCmbMlJPqyE.png&quot;,
+        &quot;size&quot;: 160008,
+        &quot;uploader&quot;: &quot;何晓奎&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 8995,
+        &quot;name&quot;: &quot;Artist&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/36CJUluJQz1OP4dT1Ty17tqrcqq0fbjR.png&quot;,
+        &quot;size&quot;: 38283,
+        &quot;uploader&quot;: &quot;何晓奎&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 8803,
+        &quot;name&quot;: &quot;Summer firefly&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/v3gygAWYdVpg7hWI0nwSuTA6A9iSTw7a.png&quot;,
+        &quot;size&quot;: 63643,
+        &quot;uploader&quot;: &quot;武傲&quot;
+      },
+      {
+        &quot;download&quot;: 0,
+        &quot;id&quot;: 8796,
+        &quot;name&quot;: &quot;Dusk&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/wXbhH62zUIsImhazX8xYTXtKHKhKlVh2.png&quot;,
+        &quot;size&quot;: 122046,
+        &quot;uploader&quot;: &quot;武傲&quot;
+      }
+    ],
+    &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/yD9sMc4mhcSPjJXS5PQCOJ34PXxmlVzQ.bin?face-id=8765&amp;type=new&quot;,
+    &quot;id&quot;: 8765,
+    &quot;name&quot;: &quot;Setting Sun&quot;,
+    &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/75Lvoz42HoGKNqWRCuH1fEm8WY2cz0xd.png&quot;,
+    &quot;remark_lang&quot;: &quot;The afterglow of the setting sun is like a golden tapestry, covering the sky&quot;,
+    &quot;size&quot;: 92026,
+    &quot;tags&quot;: {
+      &quot;3&quot;: &quot;Art&quot;
+    },
+    &quot;uploader&quot;: &quot;曹锦彬&quot;
+  },
+  &quot;message&quot;: &quot;ok&quot;
+}</pre></div><div><h4>V4 响应</h4><pre>{
+  &quot;code&quot;: 0,
+  &quot;data&quot;: {
+    &quot;id&quot;: 8765,
+    &quot;name&quot;: &quot;Setting Sun&quot;,
+    &quot;tags&quot;: [
+      {
+        &quot;id&quot;: 3,
+        &quot;name&quot;: &quot;Art&quot;
+      }
+    ],
+    &quot;download&quot;: 0,
+    &quot;size&quot;: 92026,
+    &quot;file&quot;: &quot;https://qn-hscdn2.moyoung.com/files/yD9sMc4mhcSPjJXS5PQCOJ34PXxmlVzQ.bin?face-id=8765&amp;type=new&quot;,
+    &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/75Lvoz42HoGKNqWRCuH1fEm8WY2cz0xd.png&quot;,
+    &quot;uploader&quot;: &quot;曹锦彬&quot;,
+    &quot;remark_cn&quot;: &quot;&quot;,
+    &quot;remark_en&quot;: &quot;&quot;,
+    &quot;description&quot;: &quot;The afterglow of the setting sun is like a golden tapestry, covering the sky&quot;,
+    &quot;is_premium&quot;: false,
+    &quot;face_list&quot;: [
+      {
+        &quot;id&quot;: 8380,
+        &quot;name&quot;: &quot;Crab&quot;,
+        &quot;size&quot;: 43493,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;孔繁&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/2c6c92ff1421d26552d4396b9dc67143.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 3,
+            &quot;name&quot;: &quot;Art&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 8379,
+        &quot;name&quot;: &quot;Cows&quot;,
+        &quot;size&quot;: 47969,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;孔繁&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/face-preview/56c4374cfcc4027d04928c4f98e6e7c0.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 3,
+            &quot;name&quot;: &quot;Art&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 8996,
+        &quot;name&quot;: &quot;Summer limit&quot;,
+        &quot;size&quot;: 160008,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;何晓奎&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/fP6wVw4Kn88b3adIzeVeAzCmbMlJPqyE.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 3,
+            &quot;name&quot;: &quot;Art&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 8995,
+        &quot;name&quot;: &quot;Artist&quot;,
+        &quot;size&quot;: 38283,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;何晓奎&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/36CJUluJQz1OP4dT1Ty17tqrcqq0fbjR.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 3,
+            &quot;name&quot;: &quot;Art&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 8803,
+        &quot;name&quot;: &quot;Summer firefly&quot;,
+        &quot;size&quot;: 63643,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;武傲&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/v3gygAWYdVpg7hWI0nwSuTA6A9iSTw7a.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 3,
+            &quot;name&quot;: &quot;Art&quot;
+          }
+        ]
+      },
+      {
+        &quot;id&quot;: 8796,
+        &quot;name&quot;: &quot;Dusk&quot;,
+        &quot;size&quot;: 122046,
+        &quot;download&quot;: 0,
+        &quot;uploader&quot;: &quot;武傲&quot;,
+        &quot;preview&quot;: &quot;https://qn-hscdn2.moyoung.com/images/wXbhH62zUIsImhazX8xYTXtKHKhKlVh2.png&quot;,
+        &quot;tags&quot;: [
+          {
+            &quot;id&quot;: 3,
+            &quot;name&quot;: &quot;Art&quot;
+          }
+        ]
+      }
+    ]
+  },
+  &quot;message&quot;: &quot;ok&quot;,
+  &quot;meta&quot;: {
+    &quot;firmware&quot;: &quot;H1O&quot;,
+    &quot;mcu&quot;: 363,
+    &quot;platform&quot;: &quot;海思&quot;,
+    &quot;model&quot;: &quot;Hi3321(YH601H)&quot;,
+    &quot;source&quot;: &quot;new&quot;
+  }
+}</pre></div></div></details></details></article><h2>V4 没有对应接口（不进行错误对比）</h2><div class="skip"><table><tr><th>平台</th><th>方法</th><th>说明</th><th>旧接口真实请求</th></tr><tr><td>V3</td><td>GET</td><td>V4 没有对应接口；不能与 /faces/v4/list 比较</td><td><code>https://api.moyoung.com/v2/faces?fv=MOY-LOL5-2.1.0&amp;p=1&amp;per_page=18&amp;tpls=60</code></td></tr><tr><td>杰理</td><td>GET</td><td>旧接口仅获取文件和预览，V4 face-detail 是完整详情；业务不同，不能比较</td><td><code>https://api.moyoung.com/faces/new/9628</code></td></tr><tr><td>RTL8773</td><td>GET</td><td>旧接口仅获取文件和预览，V4 face-detail 是完整详情；业务不同，不能比较</td><td><code>https://api.moyoung.com/faces/new/24608</code></td></tr><tr><td>中科蓝汛</td><td>GET</td><td>旧接口仅获取文件和预览，V4 face-detail 是完整详情；业务不同，不能比较</td><td><code>https://api.moyoung.com/faces/new/24608</code></td></tr><tr><td>海思</td><td>GET</td><td>旧接口仅获取文件和预览，V4 face-detail 是完整详情；业务不同，不能比较</td><td><code>https://api.moyoung.com/faces/new/8619</code></td></tr><tr><td>杰理nandflash</td><td>GET</td><td>旧接口仅获取文件和预览，V4 face-detail 是完整详情；业务不同，不能比较</td><td><code>https://api.moyoung.com/faces/new/7334</code></td></tr><tr><td>杰理707</td><td>GET</td><td>旧接口仅获取文件和预览，V4 face-detail 是完整详情；业务不同，不能比较</td><td><code>https://api.moyoung.com/faces/new/17125</code></td></tr></table></div></main></body></html>

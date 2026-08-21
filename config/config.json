@@ -1,0 +1,54 @@
+{
+  "old_base": "https://api.moyoung.com",
+  "new_base": "http://10.0.20.3:60003",
+  "tool_name": "API Compare",
+  "report_title": "API 兼容性对比报告",
+  "default_headers": {
+    "Accept": "application/json, text/plain, */*",
+    "User-Agent": "api-compare-test/1.0"
+  },
+  "timeout_seconds": 15,
+  "max_response_bytes": 2097152,
+  "allow_redirects": false,
+  "ignore_keys_anywhere": [
+    "request_id",
+    "requestId",
+    "trace_id",
+    "traceId",
+    "server_time",
+    "serverTime",
+    "timestamp",
+    "ts",
+    "nonce",
+    "sign"
+  ],
+  "ignore_json_paths": [
+    "$.request_id",
+    "$.trace_id",
+    "$.server_time"
+  ],
+  "file_url_prefix_compatible": false,
+  "normalize_domains_in_string_values": true,
+  "numeric_string_equal": false,
+  "compare_extra_fields_in_new": false,
+  "max_diffs_per_case": 200,
+  "datetime_string_equal": true,
+  "datetime_keys": [
+    "created_at",
+    "updated_at",
+    "deleted_at"
+  ],
+  "null_empty_string_equal_keys": [],
+  "match_arrays_by_id": true,
+  "compare_array_id_sets": false,
+  "ignore_response_id_values": true,
+  "treat_pagination_empty_face_as_equivalent": false,
+  "treat_empty_face_error_as_equivalent": false,
+  "compare_array_lengths": false,
+  "compare_array_items_by_schema": false,
+  "compare_values": false,
+  "compare_value_paths_always": [],
+  "compare_array_order": false,
+  "profile_note": "默认 schema 模式只检查结构、字段和类型；忽略普通字段值、数组 ID 集合、数组长度和新接口多字段。",
+  "treat_scalar_arrays_as_unordered": true
+}
